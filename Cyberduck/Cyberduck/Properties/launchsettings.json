@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "Cyberduck (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "Cyberduck (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

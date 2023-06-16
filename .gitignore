@@ -1,0 +1,65 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.userprefs
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.sln.docstates
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.sbr
+*.sdf
+*.aps
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.user.*
+*.VC.db
+*.VC.VC.opendb
+*.VC.VC.db
+*.VC.db-shm
+*.VC.db-wal
+ipch/
+*.aps
+*.vshost.*
+*._ReSharper*/
+*.resharper*
+*.CodeMaid.settings
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.resharper.user
+*.suo
+*.bak
+*.Cache
+*.dbmdl
+*.dbproj.user
+*.sln.docstates
+
+# Ignore NuGet packages
+*.nuget.props
+*.nuget.targets
+**/packages/
+!.nuget/
+
+# Ignore generated files
+**/Generated Files/
+**/*.g.cs
+**/*.g.i.cs
+**/*.g.vb
+**/*.g.i.vb
