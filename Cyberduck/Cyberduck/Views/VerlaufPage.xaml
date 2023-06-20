@@ -7,6 +7,66 @@
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
-        
+        <Grid x:Name="CommandBar">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <CommandBar Grid.Column="0" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
+                <!-- Left side -->
+                <AppBarElementContainer>
+                    <SplitButton>
+                        Aktion
+                        <SplitButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="Eintrag löschen" IsEnabled="False">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE74D;"/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+
+                                <MenuFlyoutSeparator/>
+
+                                <MenuFlyoutItem Text="Verlauf löschen">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE75C;"/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+
+                                <MenuFlyoutSubItem Text="Sortieren nach">
+                                    <MenuFlyoutSubItem.Icon>
+                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE8CB;"/>
+                                    </MenuFlyoutSubItem.Icon>
+                                    <MenuFlyoutItem Text="Name" />
+                                    <MenuFlyoutItem Text="Server" />
+                                    <MenuFlyoutItem Text="Protokoll" />
+                                    <MenuFlyoutItem Text="Tag" />
+                                    <MenuFlyoutItem Text="Änderungsdatum" />
+                                    <MenuFlyoutItem Text="Typ" />
+                                </MenuFlyoutSubItem>
+                            </MenuFlyout>
+                        </SplitButton.Flyout>
+                    </SplitButton>
+                </AppBarElementContainer>
+
+
+                <AppBarButton IsEnabled="False">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE74D;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar>
+
+            <CommandBar Grid.Column="2" Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
+                <!-- Right side -->
+                <AppBarButton Label="Verlauf löschen">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE75C;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar>
+        </Grid>
     </Grid>
 </Page>
