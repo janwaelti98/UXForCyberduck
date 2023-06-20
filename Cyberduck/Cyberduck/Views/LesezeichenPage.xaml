@@ -7,7 +7,20 @@
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
-
-         
+        <!-- CommandBar -->
+        <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
+            <AppBarButton Icon="Add" Label="Add"/>
+            <AppBarButton Icon="Edit" Label="Edit"/>
+            <AppBarButton Icon="Share" Label="Share"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Setting" Label="Settings">
+                    <AppBarButton.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="I" />
+                    </AppBarButton.KeyboardAccelerators>
+                </AppBarButton>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+        
+        
     </Grid>
 </Page>

@@ -451,16 +451,15 @@
         <NavigationView
             x:Name="NavigationViewControl"
             Canvas.ZIndex="0"
-         
-            IsBackButtonVisible="Visible"
+            IsBackButtonVisible="Collapsed"
             IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
             SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
             
             IsSettingsVisible="True"
             Grid.Row="2"
             ExpandedModeThresholdWidth="1280"
-            DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
-            Header="{x:Bind ((ContentControl)ViewModel.Selected).Content, Mode=OneWay}">
+            DisplayModeChanged="NavigationViewControl_DisplayModeChanged">
+
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="Shell_Lesezeichen" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.LesezeichenViewModel">
                     <NavigationViewItem.Icon>
@@ -483,32 +482,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
-            <NavigationView.HeaderTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <TextBlock
-                            Text="{Binding}"
-                            Style="{ThemeResource TitleTextBlockStyle}" />
-                    </Grid>
-                </DataTemplate>
-            </NavigationView.HeaderTemplate>
-            <i:Interaction.Behaviors>
-                <behaviors:NavigationViewHeaderBehavior
-                    DefaultHeader="{x:Bind ((ContentControl)ViewModel.Selected).Content, Mode=OneWay}">
-                    <behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <TextBlock
-                                    Text="{Binding}"
-                                    Style="{ThemeResource TitleTextBlockStyle}" />
-                            </Grid>
-                        </DataTemplate>
-                    </behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
-                </behaviors:NavigationViewHeaderBehavior>
-            </i:Interaction.Behaviors>
-            <Grid Margin="{StaticResource NavigationViewPageContentMargin}">
-                <Frame x:Name="NavigationFrame" />
-            </Grid>
+            <Frame x:Name="NavigationFrame" />
         </NavigationView>
     </Grid>
 </Page>
