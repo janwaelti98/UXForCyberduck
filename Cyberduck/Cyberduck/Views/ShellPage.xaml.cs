@@ -1,7 +1,7 @@
 ﻿using Cyberduck.Contracts.Services;
 using Cyberduck.Helpers;
 using Cyberduck.ViewModels;
-
+using Cyberduck.Views.Dialogs;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
@@ -92,21 +92,24 @@ public sealed partial class ShellPage : Page
             if (selectedNavItem == NewConnectionNavItem)
             {
                 // Öffne das Dialogfenster für "Neue Verbindung erstellen"
-                 await DisplayNoWifiDialog();
+                 await DisplayNewConnectionDialog();
             }
         }
     }
 
-    private async Task DisplayNoWifiDialog()
+    private async Task DisplayNewConnectionDialog()
     {
-        ContentDialog noWifiDialog = new ContentDialog()
-        {
-            Title = "No wifi connection",
-            Content = "Check connection and try again.",
-            CloseButtonText = "Ok"
-        };
+        ContentDialog dialog = new ContentDialog();
 
-        noWifiDialog.XamlRoot = this.Content.XamlRoot;
-        await noWifiDialog.ShowAsync();
+        dialog.XamlRoot = this.XamlRoot;
+        dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+        dialog.Title = "Save your work?";
+        dialog.PrimaryButtonText = "Save";
+        dialog.SecondaryButtonText = "Don't Save";
+        dialog.CloseButtonText = "Cancel";
+        dialog.DefaultButton = ContentDialogButton.Primary;
+        dialog.Content = new NewConnectionDialogContent();
+        
+        await dialog.ShowAsync();
     }
 }
