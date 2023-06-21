@@ -51,6 +51,7 @@
                     </SplitButton>
                 </AppBarElementContainer>
 
+                <AppBarSeparator/>
 
                 <AppBarButton IsEnabled="False">
                     <AppBarButton.Icon>
