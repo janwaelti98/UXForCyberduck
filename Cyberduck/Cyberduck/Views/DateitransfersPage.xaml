@@ -216,7 +216,6 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEC50;"/>
                     </AppBarButton.Icon>
                 </AppBarButton>
-
             </CommandBar>
         </Grid>
     </Grid>

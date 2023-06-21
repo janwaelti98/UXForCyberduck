@@ -61,6 +61,7 @@ public sealed partial class ShellPage : Page
         };
     }
 
+
     private static KeyboardAccelerator BuildKeyboardAccelerator(VirtualKey key, VirtualKeyModifiers? modifiers = null)
     {
         var keyboardAccelerator = new KeyboardAccelerator() { Key = key };
@@ -82,5 +83,30 @@ public sealed partial class ShellPage : Page
         var result = navigationService.GoBack();
 
         args.Handled = result;
+    }
+
+    private async void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+    {
+        if (args.SelectedItem is NavigationViewItem selectedNavItem)
+        {
+            if (selectedNavItem == NewConnectionNavItem)
+            {
+                // Öffne das Dialogfenster für "Neue Verbindung erstellen"
+                 await DisplayNoWifiDialog();
+            }
+        }
+    }
+
+    private async Task DisplayNoWifiDialog()
+    {
+        ContentDialog noWifiDialog = new ContentDialog()
+        {
+            Title = "No wifi connection",
+            Content = "Check connection and try again.",
+            CloseButtonText = "Ok"
+        };
+
+        noWifiDialog.XamlRoot = this.Content.XamlRoot;
+        await noWifiDialog.ShowAsync();
     }
 }
