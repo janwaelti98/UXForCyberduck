@@ -103,13 +103,30 @@ public sealed partial class ShellPage : Page
 
         dialog.XamlRoot = this.XamlRoot;
         dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-        dialog.Title = "Save your work?";
-        dialog.PrimaryButtonText = "Save";
-        dialog.SecondaryButtonText = "Don't Save";
-        dialog.CloseButtonText = "Cancel";
+        dialog.Title = "Neue Verbindung erstellen";
+        dialog.PrimaryButtonText = "Manuelle Verbindung erstellen";
+        dialog.CloseButtonText = "Abbrechen";
         dialog.DefaultButton = ContentDialogButton.Primary;
         dialog.Content = new NewConnectionDialogContent();
         
         await dialog.ShowAsync();
     }
+
+    // Handle text change and present suitable items
+    private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+    {
+        // Since selecting an item will also change the text,
+        // only listen to changes caused by user entering text.
+        if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+        {
+           //TODO
+        }
+    }
+
+    // Handle user selecting an item, in our case just output the selected item.
+    private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+    {
+        //TODO
+    }
+
 }

@@ -15,7 +15,13 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
-    <Page Remove="views\dialogs\NewConnectionDialogContent.xaml" />
+    <None Remove="Views\Dialogs\NewConnectionDialogContent.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="Views\Dialogs\NewConnectionDialogContent.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dialogs\NewConnectionDialogContent.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,9 +42,6 @@
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Views\Dialogs\NewConnectionDialogContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>
 

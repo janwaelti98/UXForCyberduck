@@ -7,6 +7,8 @@
     xmlns:helpers="using:Cyberduck.Helpers"
     xmlns:behaviors="using:Cyberduck.Behaviors"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     Loaded="OnLoaded">
 
     <Grid>
@@ -15,21 +17,35 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <Grid x:Name="AppTitleBar"
               Canvas.ZIndex="1"
               Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
-              IsHitTestVisible="True"
+              IsHitTestVisible="False"
               VerticalAlignment="Top"
               Grid.Row="0">
-            <Image Source="/Assets/StoreLogo.scale-400.png"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Image Source="/Assets/StoreLogo.scale-400.png"
                    HorizontalAlignment="Left"
                    Width="16"
                    Height="16" />
-            <TextBlock x:Name="AppTitleBarText"
+                <TextBlock x:Name="AppTitleBarText"
                        VerticalAlignment="Center"
                        TextWrapping="NoWrap"
                        Style="{StaticResource CaptionTextBlockStyle}"
                        Margin="28,0,0,0"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <AutoSuggestBox PlaceholderText="Suchen" QueryIcon="Find" TextChanged="AutoSuggestBox_TextChanged" SuggestionChosen="AutoSuggestBox_SuggestionChosen"
+ Height="32" MinWidth="200"/>
+            </Grid>
+            <Grid Grid.Column="2">
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="1">
