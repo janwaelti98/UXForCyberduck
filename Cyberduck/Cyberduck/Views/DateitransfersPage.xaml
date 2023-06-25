@@ -55,20 +55,20 @@
 
                                 <MenuFlyoutSeparator/>
 
-                                <MenuFlyoutSubItem x:Name="ConnectionMenuFlyoutSubItem" Text="Anzahl Verbindungen">
+                                <MenuFlyoutSubItem x:Name="connectionMenuFlyoutSubItem" Text="Anzahl Verbindungen">
                                     <MenuFlyoutSubItem.Icon>
                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xF0B9;"/>
                                     </MenuFlyoutSubItem.Icon>
-                                    <ToggleMenuFlyoutItem Text="Automatisch" IsChecked="True" Click="ConnectionMenuItem_Click" />
+                                    <ToggleMenuFlyoutItem Text="Automatisch" Click="ConnectionMenuItem_Click" />
                                         <MenuFlyoutSeparator/>
-                                    <ToggleMenuFlyoutItem Text="1 Verbindung" IsChecked="False" Click="ConnectionMenuItem_Click" />
-                                    <ToggleMenuFlyoutItem Text="2 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                    <ToggleMenuFlyoutItem Text="3 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                    <ToggleMenuFlyoutItem Text="4 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                    <ToggleMenuFlyoutItem Text="5 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                    <ToggleMenuFlyoutItem Text="10 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                    <ToggleMenuFlyoutItem Text="15 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                    <ToggleMenuFlyoutItem Text="20 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="1 Verbindung" Click="ConnectionMenuItem_Click" />
+                                    <ToggleMenuFlyoutItem Text="2 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="3 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="4 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="5 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="10 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="15 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                    <ToggleMenuFlyoutItem Text="20 Verbindungen" Click="ConnectionMenuItem_Click"/>
                                 </MenuFlyoutSubItem>
 
                                 <MenuFlyoutSubItem Text="Bandbreite" IsEnabled="False">
@@ -157,16 +157,16 @@
                         </SplitButton.Content>
                         <SplitButton.Flyout>
                             <MenuFlyout x:Name="connectionMenuFlyout">
-                                <ToggleMenuFlyoutItem Text="Automatisch" Tag="Auto" IsChecked="True" Click="ConnectionMenuItem_Click" />
+                                <ToggleMenuFlyoutItem Text="Automatisch" Click="ConnectionMenuItem_Click" />
                                 <MenuFlyoutSeparator/>
-                                <ToggleMenuFlyoutItem Text="1 Verbindung" IsChecked="False" Click="ConnectionMenuItem_Click" />
-                                <ToggleMenuFlyoutItem Text="2 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                <ToggleMenuFlyoutItem Text="3 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                <ToggleMenuFlyoutItem Text="4 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                <ToggleMenuFlyoutItem Text="5 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                <ToggleMenuFlyoutItem Text="10 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                <ToggleMenuFlyoutItem Text="15 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
-                                <ToggleMenuFlyoutItem Text="20 Verbindungen" IsChecked="False" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="1 Verbindung" Click="ConnectionMenuItem_Click" />
+                                <ToggleMenuFlyoutItem Text="2 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="3 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="4 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="5 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="10 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="15 Verbindungen" Click="ConnectionMenuItem_Click"/>
+                                <ToggleMenuFlyoutItem Text="20 Verbindungen" Click="ConnectionMenuItem_Click"/>
                             </MenuFlyout>
                         </SplitButton.Flyout>
                     </SplitButton>

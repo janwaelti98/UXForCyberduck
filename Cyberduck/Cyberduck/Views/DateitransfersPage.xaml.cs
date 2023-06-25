@@ -1,4 +1,5 @@
-﻿using Cyberduck.ViewModels;
+﻿using System.Diagnostics;
+using Cyberduck.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
@@ -11,10 +12,25 @@ public sealed partial class DateitransfersPage : Page
         get;
     }
 
+    // stores values for connection flyoutMenu
+    Dictionary<string, bool> connections = new Dictionary<string, bool>();
+
     public DateitransfersPage()
     {
         ViewModel = App.GetService<DateitransfersViewModel>();
         InitializeComponent();
+
+
+        // initializes default values
+        connections["Automatisch"] = true;
+        connections["1 Verbindung"] = false;
+        connections["2 Verbindungen"] = false;
+        connections["3 Verbindungen"] = false;
+        connections["4 Verbindungen"] = false;
+        connections["5 Verbindungen"] = false;
+        connections["10 Verbindungen"] = false;
+        connections["15 Verbindungen"] = false;
+        connections["20 Verbindungen"] = false;
 
         UpdateMenuFlyoutSubItem();
     }
@@ -24,64 +40,48 @@ public sealed partial class DateitransfersPage : Page
 
     private void ConnectionMenuItem_Click(object sender, RoutedEventArgs e)
     {
-        // Check if sender is ToggleMenuFlyoutItem
         if (sender is ToggleMenuFlyoutItem)
         {
-            UncheckAllToggleMenuFlyoutItems();
-
-            // Set the clicked item to checked after the reset
-            ToggleMenuFlyoutItem item = (ToggleMenuFlyoutItem)sender;
-            item.IsChecked = true;
-
+            UpdateDictionary(sender, e);
             UpdateMenuFlyoutSubItem();
         }
     }
 
     public void UpdateMenuFlyoutSubItem()
     {
-        foreach (Object item in ConnectionMenuFlyoutSubItem.Items)
+        var i = 0;
+        foreach (Object item in connectionMenuFlyoutSubItem.Items)
         {
             if (item is ToggleMenuFlyoutItem)
             {
                 ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
-                if(toggleItem.IsChecked)
-                {
-                    selectedConnectionMenuItemText.Text = toggleItem.Text;
-                }
+                toggleItem.IsChecked = connections.ElementAt(i).Value;
+                i++;  
             }
         }
 
+         i = 0;
         foreach (Object item in connectionMenuFlyout.Items)
         {
             if (item is ToggleMenuFlyoutItem)
             {
                 ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
-                if (toggleItem.IsChecked)
-                {
-                    selectedConnectionMenuItemText.Text = toggleItem.Text;
-                }
+                toggleItem.IsChecked = connections.ElementAt(i).Value;
+                i++;
             }
         }
     }
 
-    public void UncheckAllToggleMenuFlyoutItems()
+    public void UpdateDictionary(object sender, RoutedEventArgs e)
     {
-        foreach(Object item in ConnectionMenuFlyoutSubItem.Items)
-        {
-            if (item is ToggleMenuFlyoutItem)
-            {
-                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
-                toggleItem.IsChecked = false;
-            }
-        }
+        // set all values to false
+        connections = connections.ToDictionary(c => c.Key, c => false);
 
-        foreach(Object item in connectionMenuFlyout.Items)
+        if (sender is ToggleMenuFlyoutItem)
         {
-            if (item is ToggleMenuFlyoutItem)
-            {
-                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
-                toggleItem.IsChecked = false;
-            }
+            ToggleMenuFlyoutItem toggleItem  = (ToggleMenuFlyoutItem)sender;
+            connections[toggleItem.Text] = true;
+            selectedConnectionMenuItemText.Text = toggleItem.Text;
         }
     }
 
