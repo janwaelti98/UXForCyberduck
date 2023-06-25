@@ -71,7 +71,7 @@
                                     <ToggleMenuFlyoutItem Text="20 Verbindungen" Click="ConnectionMenuItem_Click"/>
                                 </MenuFlyoutSubItem>
 
-                                <MenuFlyoutSubItem Text="Bandbreite" IsEnabled="False">
+                                <MenuFlyoutSubItem x:Name="bandwidthMenuFlyoutSubItem" Text="Bandbreite" IsEnabled="False">
                                     <MenuFlyoutSubItem.Icon>
                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEC4A;"/>
                                     </MenuFlyoutSubItem.Icon>

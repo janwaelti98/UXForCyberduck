@@ -14,6 +14,8 @@ public sealed partial class DateitransfersPage : Page
 
     // stores values for connection flyoutMenu
     Dictionary<string, bool> connections = new Dictionary<string, bool>();
+    Dictionary<string, bool> bandwidths = new Dictionary<string, bool>();
+
 
     public DateitransfersPage()
     {
@@ -32,22 +34,39 @@ public sealed partial class DateitransfersPage : Page
         connections["15 Verbindungen"] = false;
         connections["20 Verbindungen"] = false;
 
-        UpdateMenuFlyoutSubItem();
+        bandwidths["Unlimitierte Bandbreite"] = true;
+        bandwidths["5 KB/s"] = false;
+        bandwidths["10 KB/s"] = false;
+        bandwidths["20 KB/s"] = false;
+        bandwidths["50 KB/s"] = false;
+        bandwidths["100 KB/s"] = false;
+        bandwidths["150 KB/s"] = false;
+        bandwidths["200 KB/s"] = false;
+        bandwidths["500 KB/s"] = false;
+        bandwidths["1 MB/s"] = false;
+        bandwidths["2 MB/s"] = false;
+        bandwidths["5 MB/s"] = false;
+        bandwidths["10 MB/s"] = false;
+        bandwidths["15 MB/s"] = false;
+        bandwidths["20 MB/s"] = false;
+        bandwidths["50 MB/s"] = false;
+        bandwidths["100 MB/s"] = false;
+
+        UpdateConnectionsMenu();
+        UpdateBandwidthsMenu();
     }
 
-
-    private ToggleMenuFlyoutItem selectedBandwidthMenuItem;
 
     private void ConnectionMenuItem_Click(object sender, RoutedEventArgs e)
     {
         if (sender is ToggleMenuFlyoutItem)
         {
-            UpdateDictionary(sender, e);
-            UpdateMenuFlyoutSubItem();
+            UpdateConnections(sender, e);
+            UpdateConnectionsMenu();
         }
     }
 
-    public void UpdateMenuFlyoutSubItem()
+    public void UpdateConnectionsMenu()
     {
         var i = 0;
         foreach (Object item in connectionMenuFlyoutSubItem.Items)
@@ -72,7 +91,7 @@ public sealed partial class DateitransfersPage : Page
         }
     }
 
-    public void UpdateDictionary(object sender, RoutedEventArgs e)
+    public void UpdateConnections(object sender, RoutedEventArgs e)
     {
         // set all values to false
         connections = connections.ToDictionary(c => c.Key, c => false);
@@ -85,20 +104,51 @@ public sealed partial class DateitransfersPage : Page
         }
     }
 
-    //TODO: fix "automatic" selection
     private void BandwithMenuItem_Click(object sender, RoutedEventArgs e)
     {
-        if (sender is ToggleMenuFlyoutItem selectedItem)
+        if (sender is ToggleMenuFlyoutItem)
         {
-            if (selectedBandwidthMenuItem != null)
-            {
-                selectedBandwidthMenuItem.IsChecked = false;
-            }
-
-            selectedItem.IsChecked = true;
-            selectedBandwidthMenuItem = selectedItem;
-
-            selectedBandwidthMenuItemText.Text = selectedItem.Text; // Update text in UI
+            UpdateBandwidths(sender, e);
+            UpdateBandwidthsMenu();
         }
     }
+
+    public void UpdateBandwidthsMenu()
+    {
+        var i = 0;
+        foreach (Object item in bandwidthMenuFlyoutSubItem.Items)
+        {
+            if (item is ToggleMenuFlyoutItem)
+            {
+                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
+                toggleItem.IsChecked = bandwidths.ElementAt(i).Value;
+                i++;
+            }
+        }
+
+        i = 0;
+        foreach (Object item in bandwithMenuFlyout.Items)
+        {
+            if (item is ToggleMenuFlyoutItem)
+            {
+                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
+                toggleItem.IsChecked = bandwidths.ElementAt(i).Value;
+                i++;
+            }
+        }
+    }
+
+    public void UpdateBandwidths(object sender, RoutedEventArgs e)
+    {
+        // set all values to false
+        bandwidths = bandwidths.ToDictionary(c => c.Key, c => false);
+
+        if (sender is ToggleMenuFlyoutItem)
+        {
+            ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)sender;
+            bandwidths[toggleItem.Text] = true;
+            selectedBandwidthMenuItemText.Text = toggleItem.Text;
+        }
+    }
+
 }
