@@ -510,7 +510,6 @@
                     </NavigationViewItem.Icon>
                     <TextBlock>Neue Verbindung erstellen</TextBlock>
                 </NavigationViewItem>
-
             </NavigationView.MenuItems>
             <Frame x:Name="NavigationFrame" />
         </NavigationView>

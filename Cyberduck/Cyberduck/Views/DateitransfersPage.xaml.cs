@@ -15,27 +15,73 @@ public sealed partial class DateitransfersPage : Page
     {
         ViewModel = App.GetService<DateitransfersViewModel>();
         InitializeComponent();
+
+        UpdateMenuFlyoutSubItem();
     }
 
 
-
-    private ToggleMenuFlyoutItem selectedConnectionMenuItem;
     private ToggleMenuFlyoutItem selectedBandwidthMenuItem;
 
-    //TODO: fix "automatic" selection
     private void ConnectionMenuItem_Click(object sender, RoutedEventArgs e)
     {
-        if (sender is ToggleMenuFlyoutItem selectedItem)
+        // Check if sender is ToggleMenuFlyoutItem
+        if (sender is ToggleMenuFlyoutItem)
         {
-            if (selectedConnectionMenuItem != null)
+            UncheckAllToggleMenuFlyoutItems();
+
+            // Set the clicked item to checked after the reset
+            ToggleMenuFlyoutItem item = (ToggleMenuFlyoutItem)sender;
+            item.IsChecked = true;
+
+            UpdateMenuFlyoutSubItem();
+        }
+    }
+
+    public void UpdateMenuFlyoutSubItem()
+    {
+        foreach (Object item in ConnectionMenuFlyoutSubItem.Items)
+        {
+            if (item is ToggleMenuFlyoutItem)
             {
-                selectedConnectionMenuItem.IsChecked = false;
+                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
+                if(toggleItem.IsChecked)
+                {
+                    selectedConnectionMenuItemText.Text = toggleItem.Text;
+                }
             }
+        }
 
-            selectedItem.IsChecked = true;
-            selectedConnectionMenuItem = selectedItem;
+        foreach (Object item in connectionMenuFlyout.Items)
+        {
+            if (item is ToggleMenuFlyoutItem)
+            {
+                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
+                if (toggleItem.IsChecked)
+                {
+                    selectedConnectionMenuItemText.Text = toggleItem.Text;
+                }
+            }
+        }
+    }
 
-            selectedConnectionMenuItemText.Text = selectedItem.Text; // Update text in UI
+    public void UncheckAllToggleMenuFlyoutItems()
+    {
+        foreach(Object item in ConnectionMenuFlyoutSubItem.Items)
+        {
+            if (item is ToggleMenuFlyoutItem)
+            {
+                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
+                toggleItem.IsChecked = false;
+            }
+        }
+
+        foreach(Object item in connectionMenuFlyout.Items)
+        {
+            if (item is ToggleMenuFlyoutItem)
+            {
+                ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
+                toggleItem.IsChecked = false;
+            }
         }
     }
 

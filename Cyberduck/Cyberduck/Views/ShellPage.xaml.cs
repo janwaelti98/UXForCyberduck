@@ -1,7 +1,6 @@
 ﻿using Cyberduck.Contracts.Services;
 using Cyberduck.Helpers;
 using Cyberduck.ViewModels;
-using Cyberduck.Views.Dialogs;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
@@ -97,6 +96,7 @@ public sealed partial class ShellPage : Page
         }
     }
 
+    // Shows dialog for creating a new connection
     private async Task DisplayNewConnectionDialog()
     {
         ContentDialog dialog = new ContentDialog();

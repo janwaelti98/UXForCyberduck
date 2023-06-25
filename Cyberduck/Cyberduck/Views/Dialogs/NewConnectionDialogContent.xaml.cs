@@ -1,17 +1,19 @@
-﻿using Microsoft.UI.Xaml.Controls;
+﻿using Cyberduck.ViewModels;
 
-namespace Cyberduck.Views.Dialogs;
+using Microsoft.UI.Xaml.Controls;
+
+namespace Cyberduck.Views;
 
 public sealed partial class NewConnectionDialogContent : Page
 {
-    public NewConnectionDialogContent()
+    public NewConnectionDialogContentViewModel ViewModel
     {
-        InitializeComponent();
+        get;
     }
 
-    private void InitializeComponent()
+    public NewConnectionDialogContent()
     {
-        // Rufen Sie hier die InitializeComponent-Methode auf, um die XAML-Komponenten zu initialisieren
-        //Microsoft.UI.Xaml.Application.LoadComponent(this, new System.Uri("ms-appx:///Cyberduck/Views/Dialogs/NewConnectionDialogContent.xaml"));
+        ViewModel = App.GetService<NewConnectionDialogContentViewModel>();
+        InitializeComponent();
     }
 }

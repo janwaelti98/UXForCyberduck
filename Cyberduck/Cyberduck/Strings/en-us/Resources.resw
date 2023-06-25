@@ -103,4 +103,7 @@
   <data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
     <value>https://YourPrivacyUrlGoesHere/</value>
   </data>
+  <data name="Shell_NewConnectionDialogContent.Content" xml:space="preserve">
+    <value>NewConnectionDialogContent</value>
+  </data>
 </root>

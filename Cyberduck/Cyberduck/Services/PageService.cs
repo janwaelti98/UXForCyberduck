@@ -19,6 +19,7 @@ public class PageService : IPageService
         Configure<BonjourViewModel, BonjourPage>();
         Configure<DateitransfersViewModel, DateitransfersPage>();
         Configure<SettingsViewModel, SettingsPage>();
+        Configure<NewConnectionDialogContentViewModel, NewConnectionDialogContent>();
     }
 
     public Type GetPageType(string key)
