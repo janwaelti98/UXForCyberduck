@@ -15,10 +15,11 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Views\BookmarksPage\Components\CommandBar.xaml" />
-    <None Remove="Views\DatatransferPage\Components\CommandBar.xaml" />
-    <None Remove="Views\HistoryPage\Components\CommandBar.xaml" />
+    <None Remove="Views\BookmarksPage\Components\BookmarksCommandBar.xaml" />
+    <None Remove="Views\DatatransferPage\Components\DatatransferCommandBar.xaml" />
+    <None Remove="Views\HistoryPage\Components\HistoryCommandBar.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryItem.xaml" />
+    <None Remove="Views\HistoryPage\Components\HistoryItemTag.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,13 +42,16 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Page Update="Views\BookmarksPage\Components\CommandBar.xaml">
+    <Page Update="Views\HistoryPage\Components\HistoryItemTag.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="Views\DatatransferPage\Components\CommandBar.xaml">
+    <Page Update="Views\BookmarksPage\Components\BookmarksCommandBar.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="Views\HistoryPage\Components\CommandBar.xaml">
+    <Page Update="Views\DatatransferPage\Components\DatatransferCommandBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\HistoryPage\Components\HistoryCommandBar.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="Views\HistoryPage\Components\HistoryItem.xaml">
@@ -60,8 +64,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\BonjourPage\Components\" />
-    <Folder Include="Views\Dialogs\Components\" />
     <Folder Include="Views\SettingsPage\" />
   </ItemGroup>
   

@@ -48,23 +48,8 @@
         </StackPanel>
 
         <!-- Tag -->
-        <Grid x:Name="Tag" Grid.Column="2" VerticalAlignment="Center" ColumnSpacing="8">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-
-            <Border Grid.Column="0" BorderThickness="1" BorderBrush="#f3a43d" Background="Transparent" CornerRadius="14" Padding="12 0 12 0">
-                <Grid ColumnSpacing="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <FontIcon Grid.Column="0" Glyph="&#xE8EC;" FontSize="14" Foreground="#f3a43d"/>
-                    <TextBlock Grid.Column="1" Text="Arbeit" FontSize="14" TextWrapping="NoWrap" Foreground="Gray" Padding="4" />
-                </Grid>
-            </Border>
+        <Grid Grid.Column="2">
+            <local:HistoryItemTag></local:HistoryItemTag>
         </Grid>
 
         <!-- Modification Date -->
