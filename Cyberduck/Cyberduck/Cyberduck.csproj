@@ -43,6 +43,9 @@
 
   <ItemGroup>
     <Folder Include="Views\Dialogs\" />
+    <Folder Include="Views\BookmarksPage\" />
+    <Folder Include="Views\DatatransferPage\" />
+    <Folder Include="Views\HistoryPage\" />
   </ItemGroup>
   
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
