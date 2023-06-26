@@ -1,27 +1,29 @@
-﻿using System.Diagnostics;
-using Cyberduck.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Navigation;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
 
-namespace Cyberduck.Views;
 
-public sealed partial class DateitransfersPage : Page
+namespace Cyberduck.Views.DatatransferPage.Components;
+public sealed partial class CommandBar : UserControl
 {
-    public DateitransfersViewModel ViewModel
-    {
-        get;
-    }
-
     // stores values for connection flyoutMenu
-    Dictionary<string, bool> connections = new Dictionary<string, bool>();
-    Dictionary<string, bool> bandwidths = new Dictionary<string, bool>();
+    Dictionary<string, bool> connections = new();
+    Dictionary<string, bool> bandwidths = new();
 
-
-    public DateitransfersPage()
+    public CommandBar()
     {
-        ViewModel = App.GetService<DateitransfersViewModel>();
-        InitializeComponent();
-
+        this.InitializeComponent();
 
         // initializes default values
         connections["Automatisch"] = true;
@@ -56,7 +58,6 @@ public sealed partial class DateitransfersPage : Page
         UpdateBandwidthsMenu();
     }
 
-
     private void ConnectionMenuItem_Click(object sender, RoutedEventArgs e)
     {
         if (sender is ToggleMenuFlyoutItem)
@@ -75,11 +76,11 @@ public sealed partial class DateitransfersPage : Page
             {
                 ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)item;
                 toggleItem.IsChecked = connections.ElementAt(i).Value;
-                i++;  
+                i++;
             }
         }
 
-         i = 0;
+        i = 0;
         foreach (Object item in connectionMenuFlyout.Items)
         {
             if (item is ToggleMenuFlyoutItem)
@@ -98,7 +99,7 @@ public sealed partial class DateitransfersPage : Page
 
         if (sender is ToggleMenuFlyoutItem)
         {
-            ToggleMenuFlyoutItem toggleItem  = (ToggleMenuFlyoutItem)sender;
+            ToggleMenuFlyoutItem toggleItem = (ToggleMenuFlyoutItem)sender;
             connections[toggleItem.Text] = true;
             selectedConnectionMenuItemText.Text = toggleItem.Text;
         }
@@ -150,5 +151,4 @@ public sealed partial class DateitransfersPage : Page
             selectedBandwidthMenuItemText.Text = toggleItem.Text;
         }
     }
-
 }

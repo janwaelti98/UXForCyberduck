@@ -17,7 +17,4 @@ public sealed partial class VerlaufPage : Page
         InitializeComponent();
     }
 
-
-
-    public string CurrentDateTime => DateTime.Now.ToString("dd.MM.yyyy HH:mm");
 }
