@@ -16,4 +16,8 @@ public sealed partial class VerlaufPage : Page
         ViewModel = App.GetService<VerlaufViewModel>();
         InitializeComponent();
     }
+
+
+
+    public string CurrentDateTime => DateTime.Now.ToString("dd.MM.yyyy HH:mm");
 }
