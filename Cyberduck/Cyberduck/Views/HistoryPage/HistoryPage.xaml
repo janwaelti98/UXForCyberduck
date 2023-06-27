@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="using:Cyberduck.Views.HistoryPage.Components"
+    xmlns:local="using:Cyberduck.Views.HistoryPage.Components" xmlns:local1="using:Cyberduck.Views"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
@@ -16,10 +16,38 @@
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
 
-        <StackPanel x:Name="HistoryContent" Grid.Row="1" Margin="48" Spacing="8">
+        <ListView Grid.Row="1" Margin="48">
 
-            <local:HistoryItem></local:HistoryItem>
+            <!-- Custom style -->
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                   
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="0,0,10,8">
+                        <local:HistoryItem />
+                    </Border>
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
 
-        </StackPanel>
+            <!-- Your items here -->
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+            <local:HistoryItem />
+
+        </ListView>
     </Grid>
 </Page>

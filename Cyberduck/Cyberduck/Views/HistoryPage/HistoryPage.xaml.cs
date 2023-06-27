@@ -1,5 +1,7 @@
-﻿using Cyberduck.ViewModels;
-
+﻿using System.Collections.ObjectModel;
+using Cyberduck.ViewModels;
+using Cyberduck.Views.HistoryPage.Components;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
 namespace Cyberduck.Views;
@@ -16,5 +18,8 @@ public sealed partial class VerlaufPage : Page
         ViewModel = App.GetService<VerlaufViewModel>();
         InitializeComponent();
     }
+
+
+
 
 }
