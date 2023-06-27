@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="using:Cyberduck.Views.HistoryPage.Components" xmlns:local1="using:Cyberduck.Views"
+    xmlns:viewmodels="using:Cyberduck.ViewModels"
+    d:DataContext="{d:DesignInstance Type=viewmodels:HistoryViewModel}"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
@@ -17,7 +19,7 @@
         <local:CommandBar></local:CommandBar>
 
         <!-- ListView for History Items -->
-        <ListView Grid.Row="1">
+        <ListView Grid.Row="1" ItemsSource="{Binding HistoryItems}">
          
             <!-- Custom style  -->
             <ListView.ItemContainerStyle>
@@ -38,28 +40,13 @@
                 </Style>
             </ListView.ItemContainerStyle>
 
-               <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin="48 0 48 0">
-                            <local:HistoryItem />
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>  
-            
-            <!-- Items -->
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-            <local:HistoryItem />
-
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="48 0 48 8">
+                        <local:HistoryItem Icon="{Binding Icon}" />
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>

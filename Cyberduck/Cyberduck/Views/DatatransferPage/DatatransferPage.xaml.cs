@@ -7,14 +7,14 @@ namespace Cyberduck.Views;
 
 public sealed partial class DateitransfersPage : Page
 {
-    public DateitransfersViewModel ViewModel
+    public DatatransferViewModel ViewModel
     {
         get;
     }
 
     public DateitransfersPage()
     {
-        ViewModel = App.GetService<DateitransfersViewModel>();
+        ViewModel = App.GetService<DatatransferViewModel>();
         InitializeComponent();
     }
 }

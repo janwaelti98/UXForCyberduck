@@ -2,9 +2,9 @@
 
 namespace Cyberduck.ViewModels;
 
-public partial class VerlaufViewModel : ObservableRecipient
+public partial class BookmarksViewModel : ObservableRecipient
 {
-    public VerlaufViewModel()
+    public BookmarksViewModel()
     {
     }
 }

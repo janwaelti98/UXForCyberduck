@@ -6,14 +6,14 @@ namespace Cyberduck.Views;
 
 public sealed partial class LesezeichenPage : Page
 {
-    public LesezeichenViewModel ViewModel
+    public BookmarksViewModel ViewModel
     {
         get;
     }
 
     public LesezeichenPage()
     {
-        ViewModel = App.GetService<LesezeichenViewModel>();
+        ViewModel = App.GetService<BookmarksViewModel>();
         InitializeComponent();
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Cyberduck.ViewModels;
 
-public partial class LesezeichenViewModel : ObservableRecipient
+public partial class DatatransferViewModel : ObservableRecipient
 {
-    public LesezeichenViewModel()
+    public DatatransferViewModel()
     {
     }
 }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <UserControl
     x:Class="Cyberduck.Views.HistoryPage.Components.HistoryItem"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,16 +5,26 @@
     xmlns:local="using:Cyberduck.Views.HistoryPage.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="using:Cyberduck.ViewModels"
+    d:DataContext="{d:DesignInstance Type=viewmodels:HistoryViewModel}"
     mc:Ignorable="d">
 
+    <UserControl.Resources>
+        <local:IconConverter x:Key="IconConverter" />
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <viewmodels:HistoryViewModel />
+    </UserControl.DataContext>
+
     <Grid
-                    CornerRadius="4"
-                    Padding="16"
-                    ColumnSpacing="16"
-                    BorderThickness="1"
-                    Height="Auto"
-                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
-                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+        CornerRadius="4"
+        Padding="16"
+        ColumnSpacing="16"
+        BorderThickness="1"
+        Height="Auto"
+        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
@@ -25,40 +34,24 @@
 
         <!-- Icon -->
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <FontIcon Glyph="&#xEDA2;"/>
+            <FontIcon Glyph="{Binding Icon, Converter={StaticResource IconConverter}}" />
         </StackPanel>
 
         <!-- Connection Description -->
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0 0 50 0">
-            <TextBlock Text="Legacy"
-                               FontSize="14"
-                               TextWrapping="NoWrap"
-                               Margin="0 0 0 4"/>
-
-            <TextBlock Text="onedrive.live.com/privat"
-                               FontSize="12"
-                               TextWrapping="NoWrap"
-                               Foreground="Gray"/>
-
-            <TextBlock Text="johndoe"
-                               FontSize="12"
-                               TextWrapping="NoWrap"
-                               Foreground="Gray"/>
-
+            <TextBlock Text="Legacy" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
+            <TextBlock Text="onedrive.live.com/privat" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+            <TextBlock Text="johndoe" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
         </StackPanel>
 
         <!-- Tag -->
         <Grid Grid.Column="2">
-            <local:HistoryItemTag></local:HistoryItemTag>
+            <local:HistoryItemTag />
         </Grid>
 
         <!-- Modification Date -->
         <StackPanel Grid.Column="3" VerticalAlignment="Center">
-            <TextBlock
-                           Text="{x:Bind CurrentDateTime, Mode=OneWay}"
-                           FontSize="14"
-                           TextWrapping="NoWrap"/>
+            <TextBlock Text="{x:Bind CurrentDateTime, Mode=OneWay}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
-
     </Grid>
 </UserControl>

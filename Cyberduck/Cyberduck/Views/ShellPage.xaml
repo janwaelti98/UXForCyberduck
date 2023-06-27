@@ -478,13 +478,13 @@
             SelectionChanged="NavigationView_SelectionChanged">
 
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="Shell_Lesezeichen" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.LesezeichenViewModel">
+                <NavigationViewItem x:Uid="Shell_Lesezeichen" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.BookmarksViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE8A4;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 
-                <NavigationViewItem x:Uid="Shell_Verlauf" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.VerlaufViewModel">
+                <NavigationViewItem x:Uid="Shell_Verlauf" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.HistoryViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE81C;"/>
                     </NavigationViewItem.Icon>
@@ -496,7 +496,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
-                <NavigationViewItem x:Uid="Shell_Dateitransfers" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.DateitransfersViewModel">
+                <NavigationViewItem x:Uid="Shell_Dateitransfers" helpers:NavigationHelper.NavigateTo="Cyberduck.ViewModels.DatatransferViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE8CB;"/>
                     </NavigationViewItem.Icon>

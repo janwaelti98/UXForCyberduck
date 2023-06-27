@@ -8,18 +8,17 @@ namespace Cyberduck.Views;
 
 public sealed partial class VerlaufPage : Page
 {
-    public VerlaufViewModel ViewModel
+    public HistoryViewModel ViewModel
     {
         get;
     }
 
     public VerlaufPage()
     {
-        ViewModel = App.GetService<VerlaufViewModel>();
+        ViewModel = App.GetService<HistoryViewModel>();
         InitializeComponent();
+
+        DataContext = new HistoryViewModel();
     }
-
-
-
 
 }

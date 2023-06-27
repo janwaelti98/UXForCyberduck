@@ -14,10 +14,10 @@ public class PageService : IPageService
 
     public PageService()
     {
-        Configure<LesezeichenViewModel, LesezeichenPage>();
-        Configure<VerlaufViewModel, VerlaufPage>();
+        Configure<BookmarksViewModel, LesezeichenPage>();
+        Configure<HistoryViewModel, VerlaufPage>();
         Configure<BonjourViewModel, BonjourPage>();
-        Configure<DateitransfersViewModel, DateitransfersPage>();
+        Configure<DatatransferViewModel, DateitransfersPage>();
         Configure<SettingsViewModel, SettingsPage>();
         Configure<NewConnectionDialogContentViewModel, NewConnectionDialogContent>();
     }
