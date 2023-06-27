@@ -28,4 +28,9 @@ public class HistoryItem
         get;
         set;
     }
+    public string ModificationDate
+    {
+        get;
+        set;
+    }
 }

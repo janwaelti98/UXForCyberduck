@@ -46,7 +46,7 @@
 
         <!-- Modification Date -->
         <StackPanel Grid.Column="3" VerticalAlignment="Center">
-            <TextBlock Text="{x:Bind CurrentDateTime, Mode=OneWay}" FontSize="14" TextWrapping="NoWrap" />
+            <TextBlock Text="{Binding ModificationDate}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -13,22 +13,24 @@ public partial class HistoryViewModel : ObservableRecipient
 
     public HistoryViewModel()
     {
-        // To show in UI
+        // Demo Items to show in UI
         HistoryItems = new ObservableCollection<HistoryItem>
         {
             new HistoryItem
             {
                 Icon = "E700",
                 ConnectionName = "Legacy",
-                ConnectionAdress ="ftp://ftp.example.com",
-                Username="johndoe"
+                ConnectionAdress = "ftp://ftp.example.com",
+                Username = "johndoe",
+                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
             },
             new HistoryItem
             { 
                 Icon = "E707",
                 ConnectionName = "OneDrive - privat", 
-                ConnectionAdress ="onedrive.live.com/privat", 
-                Username="johndoe@hotmail.com"
+                ConnectionAdress = "onedrive.live.com/privat", 
+                Username = "johndoe@hotmail.com",
+                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
             }
         };
     }
