@@ -11,4 +11,9 @@ public class HistoryItem
     {
         get; set;
     }
+
+    public string Name
+    {
+        get; set;
+    }
 }

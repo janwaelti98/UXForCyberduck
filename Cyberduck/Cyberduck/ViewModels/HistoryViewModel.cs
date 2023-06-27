@@ -15,8 +15,8 @@ public partial class HistoryViewModel : ObservableRecipient
     {
         HistoryItems = new ObservableCollection<HistoryItem>
         {
-            new HistoryItem { Icon = "E700" },
-            new HistoryItem { Icon = "E707" }
+            new HistoryItem { Icon = "E700", Name = "Test"},
+            new HistoryItem { Icon = "E707", Name = "Test3"}
         };
     }
 }

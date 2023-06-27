@@ -37,6 +37,7 @@ public sealed partial class HistoryItem : UserControl
 }
 
 
+
 public class IconConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, string language)
