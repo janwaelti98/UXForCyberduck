@@ -16,25 +16,37 @@
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
 
-        <ListView Grid.Row="1" Margin="48">
-
-            <!-- Custom style -->
+        <!-- ListView for History Items -->
+        <ListView Grid.Row="1">
+         
+            <!-- Custom style  -->
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                   
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <ContentPresenter
+                                    ContentTransitions="{TemplateBinding ContentTransitions}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
             </ListView.ItemContainerStyle>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Margin="0,0,10,8">
-                        <local:HistoryItem />
-                    </Border>
-                </DataTemplate>
-                
-            </ListView.ItemTemplate>
 
-            <!-- Your items here -->
+               <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="48 0 48 0">
+                            <local:HistoryItem />
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>  
+            
+            <!-- Items -->
             <local:HistoryItem />
             <local:HistoryItem />
             <local:HistoryItem />
