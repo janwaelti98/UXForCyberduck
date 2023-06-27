@@ -13,10 +13,23 @@ public partial class HistoryViewModel : ObservableRecipient
 
     public HistoryViewModel()
     {
+        // To show in UI
         HistoryItems = new ObservableCollection<HistoryItem>
         {
-            new HistoryItem { Icon = "E700", Name = "Test"},
-            new HistoryItem { Icon = "E707", Name = "Test3"}
+            new HistoryItem
+            {
+                Icon = "E700",
+                ConnectionName = "Legacy",
+                ConnectionAdress ="ftp://ftp.example.com",
+                Username="johndoe"
+            },
+            new HistoryItem
+            { 
+                Icon = "E707",
+                ConnectionName = "OneDrive - privat", 
+                ConnectionAdress ="onedrive.live.com/privat", 
+                Username="johndoe@hotmail.com"
+            }
         };
     }
 }

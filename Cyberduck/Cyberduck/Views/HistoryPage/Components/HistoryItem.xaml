@@ -33,10 +33,10 @@
         </StackPanel>
 
         <!-- Connection Description -->
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0 0 50 0">
-            <TextBlock Text="{Binding Name}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
-            <TextBlock Text="onedrive.live.com/privat" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
-            <TextBlock Text="johndoe" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="150">
+            <TextBlock Text="{Binding ConnectionName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
+            <TextBlock Text="{Binding ConnectionAdress}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+            <TextBlock Text="{Binding Username}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
         </StackPanel>
 
         <!-- Tag -->

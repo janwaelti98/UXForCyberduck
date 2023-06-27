@@ -9,11 +9,23 @@ public class HistoryItem
 {
     public string Icon
     {
-        get; set;
+        get;
+        set;
     }
 
-    public string Name
+    public string ConnectionName
     {
-        get; set;
+        get;
+        set;
+    }
+    public string ConnectionAdress
+    {
+        get;
+        set;
+    }
+    public string Username
+    {
+        get;
+        set;
     }
 }
