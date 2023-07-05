@@ -23,14 +23,24 @@ public partial class HistoryViewModel : ObservableRecipient
                 ConnectionAdress = "ftp://ftp.example.com",
                 Username = "johndoe",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                Tags = new List<Tag>
+                    {
+                       new Tag { Tagname = "Tag1", Color = "#fcba03" },
+                       new Tag { Tagname = "Tag2", Color = "#fcba03" }
+                    }
             },
             new HistoryItem
-            { 
+            {
                 Icon = "E707",
-                ConnectionName = "OneDrive - privat", 
-                ConnectionAdress = "onedrive.live.com/privat", 
+                ConnectionName = "OneDrive - privat",
+                ConnectionAdress = "onedrive.live.com/privat",
                 Username = "johndoe@hotmail.com",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                Tags = new List<Tag>
+                    {
+                       new Tag { Tagname = "Tag1", Color = "#fcba03" },
+                       new Tag { Tagname = "Tag2", Color = "#fcba03" }
+                    }
             }
         };
     }

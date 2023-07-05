@@ -28,6 +28,12 @@ public class HistoryItem
         get;
         set;
     }
+
+    public List<Tag> Tags
+    {
+        get;
+        set;
+    }
     public string ModificationDate
     {
         get;

@@ -31,9 +31,6 @@ public sealed partial class HistoryItem : UserControl
         get => (string)GetValue(IconProperty);
         set => SetValue(IconProperty, value);
     }
-
-    public string CurrentDateTime => DateTime.Now.ToString("dd.MM.yyyy HH:mm");
-
 }
 
 
