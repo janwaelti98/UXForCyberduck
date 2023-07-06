@@ -8,7 +8,44 @@
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
+
+        <!-- ListView for Datatransfers -->
+        <ListView Grid.Row="1" ItemsSource="{Binding Datatransfers}"  Margin="48 0 48 0">
+
+            <!--<ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <ContentPresenter
+                                    ContentTransitions="{TemplateBinding ContentTransitions}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>-->
+
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>-->
+                    <Border Margin="0 0 0 8">
+                        <local:Datatransfer />
+                    </Border>
+                <!--</DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
+
+      
     </Grid>
 </Page>

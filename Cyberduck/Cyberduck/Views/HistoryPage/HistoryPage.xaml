@@ -18,7 +18,7 @@
         <local:CommandBar></local:CommandBar>
 
         <!-- ListView for History Items -->
-        <ListView Grid.Row="1" ItemsSource="{Binding HistoryItems}">
+        <ListView Grid.Row="1" ItemsSource="{Binding HistoryItems}"  Margin="48 0 48 0">
          
             <!-- Custom style  -->
             <ListView.ItemContainerStyle>
@@ -41,7 +41,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="48 0 48 8">
+                    <Border Margin="0 0 0 8">
                         <local:HistoryItem />
                     </Border>
                 </DataTemplate>

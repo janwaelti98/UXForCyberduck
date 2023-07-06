@@ -11,5 +11,6 @@
     <Grid x:Name="ContentArea">
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
+        
     </Grid>
 </Page>
