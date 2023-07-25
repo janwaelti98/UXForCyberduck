@@ -8,11 +8,7 @@
     xmlns:local="using:Cyberduck.Core.Models"
     mc:Ignorable="d">
 
-    <UserControl.DataContext>
-        <local:Tag />
-    </UserControl.DataContext>
-
-    <Grid VerticalAlignment="Center" ColumnSpacing="8">
+    <Grid VerticalAlignment="Center" ColumnSpacing="-12">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />

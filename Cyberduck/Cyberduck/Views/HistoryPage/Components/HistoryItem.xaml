@@ -39,10 +39,31 @@
             <TextBlock Text="{Binding Username}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
         </StackPanel>
 
-        <!-- Tag -->
-        <Grid Grid.Column="2">
-            <local:HistoryItemTag />
-        </Grid>
+        <!-- Tags -->
+        <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+            <ListView ItemsSource="{Binding Tags}" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                      IsHitTestVisible="False" SelectionMode="None">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Left"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="FocusVisualPrimaryBrush" Value="Transparent" />
+                        <Setter Property="FocusVisualSecondaryBrush" Value="Transparent" />
+                        <Setter Property="FocusVisualPrimaryThickness" Value="0" />
+                        <Setter Property="FocusVisualSecondaryThickness" Value="0" />
+                        <Setter Property="IsTabStop" Value="False" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:HistoryItemTag Tag="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
 
         <!-- Modification Date -->
         <StackPanel Grid.Column="3" VerticalAlignment="Center">
