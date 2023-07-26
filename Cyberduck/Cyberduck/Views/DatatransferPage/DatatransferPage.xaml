@@ -19,7 +19,7 @@
         <!-- ListView for Datatransfers -->
         <ListView Grid.Row="1" ItemsSource="{Binding Datatransfers}"  Margin="48 0 48 0">
 
-            <!--<ListView.ItemContainerStyle>
+            <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     <Setter Property="Template">
@@ -35,7 +35,7 @@
                         </Setter.Value>
                     </Setter>
                 </Style>
-            </ListView.ItemContainerStyle>-->
+            </ListView.ItemContainerStyle>
 
             <!--<ListView.ItemTemplate>
                 <DataTemplate>-->
@@ -44,6 +44,8 @@
                     </Border>
                 <!--</DataTemplate>
             </ListView.ItemTemplate>-->
+
+            <local:DatatransferGroup/>
         </ListView>
 
       

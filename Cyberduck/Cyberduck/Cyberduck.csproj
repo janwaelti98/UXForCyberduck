@@ -18,6 +18,7 @@
     <None Remove="Views\BookmarksPage\Components\BookmarksCommandBar.xaml" />
     <None Remove="Views\DatatransferPage\Components\Datatransfer.xaml" />
     <None Remove="Views\DatatransferPage\Components\DatatransferCommandBar.xaml" />
+    <None Remove="Views\DatatransferPage\Components\DatatransferGroup.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryCommandBar.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryItem.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryItemTag.xaml" />
@@ -43,6 +44,9 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\DatatransferPage\Components\DatatransferGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\DatatransferPage\Components\Datatransfer.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
