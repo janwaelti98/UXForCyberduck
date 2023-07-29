@@ -37,4 +37,9 @@ public class Datatransfer
         set; 
     }
 
+    public string StateAsText
+    {
+        get;
+        set;
+    }
 }

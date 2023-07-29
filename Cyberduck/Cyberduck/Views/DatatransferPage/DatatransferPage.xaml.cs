@@ -16,5 +16,7 @@ public sealed partial class DateitransfersPage : Page
     {
         ViewModel = App.GetService<DatatransferViewModel>();
         InitializeComponent();
+
+        DataContext = new DatatransferViewModel();
     }
 }

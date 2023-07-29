@@ -37,13 +37,13 @@
                 </Style>
             </ListView.ItemContainerStyle>
 
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
                     <Border Margin="0 0 0 8">
-                        <local:Datatransfer />
+                        <local:Datatransfer/>
                     </Border>
-                <!--</DataTemplate>
-            </ListView.ItemTemplate>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
             <local:DatatransferGroup/>
         </ListView>

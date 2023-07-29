@@ -12,6 +12,11 @@ public partial class DatatransferViewModel : ObservableRecipient
         get; set;
     }
 
+    public ObservableCollection<DatatransferGroup> DatatransferGroups
+    {
+        get; set; 
+    }
+
 
     public DatatransferViewModel()
     {
@@ -23,16 +28,44 @@ public partial class DatatransferViewModel : ObservableRecipient
                 Typ = DatatransferTyp.Download,
                 FileName = "Bilder",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Size = "8 KiB",
-                State = DatatransferState.Success
+                Size = "80 MB",
+                State = DatatransferState.Success,
+                StateAsText = "Herunterladen fertig..."
             },
             new Datatransfer
             {
-                Typ = DatatransferTyp.Download,
-                FileName = "Bilder",
+                Typ = DatatransferTyp.Upload,
+                FileName = "Ferien_2023",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Size = "8 KiB",
-                State = DatatransferState.Success
+                Size = "1.5 GB",
+                State = DatatransferState.Success,
+                StateAsText = "Hochladen fertig..."
+            }
+        };
+
+        DatatransferGroups = new ObservableCollection<DatatransferGroup>
+        {
+            new DatatransferGroup
+            {
+                Items = new List<Datatransfer>
+                {
+                    new Datatransfer
+                    {
+                        Typ = DatatransferTyp.Download,
+                        FileName = "Grouped Item 1",
+                        ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                        Size = "10 KiB",
+                        State = DatatransferState.Success
+                    },
+                    new Datatransfer
+                    {
+                        Typ = DatatransferTyp.Download,
+                        FileName = "Grouped Item 2",
+                        ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                        Size = "12 KiB",
+                        State = DatatransferState.Success
+                    },
+                }
             }
         };
     }
