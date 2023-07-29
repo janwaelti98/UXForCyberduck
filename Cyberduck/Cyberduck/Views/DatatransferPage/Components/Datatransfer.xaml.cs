@@ -13,16 +13,17 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Cyberduck.ViewModels;
+using Cyberduck.Core.Models;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace Cyberduck.Views.DatatransferPage.Components;
 
-public sealed partial class Datatransfer : UserControl
+public partial class Datatransfer : UserControl
 {
     public Datatransfer()
     {
-        this.InitializeComponent();
+        InitializeComponent();
     }
 }

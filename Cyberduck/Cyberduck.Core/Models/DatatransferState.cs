@@ -10,5 +10,5 @@ public enum DatatransferState
     Success,
     Critical,
     Caution,
-    Attention
+    InProgress
 }

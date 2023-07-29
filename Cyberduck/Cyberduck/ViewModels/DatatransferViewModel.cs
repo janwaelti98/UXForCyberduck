@@ -14,7 +14,7 @@ public partial class DatatransferViewModel : ObservableRecipient
 
     public ObservableCollection<DatatransferGroup> DatatransferGroups
     {
-        get; set; 
+        get; set;
     }
 
 
@@ -22,26 +22,35 @@ public partial class DatatransferViewModel : ObservableRecipient
     {
         // Demo Items to show in UI
         Datatransfers = new ObservableCollection<Datatransfer>
-        {
-            new Datatransfer
             {
-                Typ = DatatransferTyp.Download,
-                FileName = "Bilder",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Size = "80 MB",
-                State = DatatransferState.Success,
-                StateAsText = "Herunterladen fertig..."
-            },
-            new Datatransfer
-            {
-                Typ = DatatransferTyp.Upload,
-                FileName = "Ferien_2023",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Size = "1.5 GB",
-                State = DatatransferState.Success,
-                StateAsText = "Hochladen fertig..."
-            }
-        };
+                new Datatransfer
+                {
+                    Typ = DatatransferTyp.Download,
+                    FileName = "Bilder",
+                    ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                    Size = "80 MB",
+                    State = DatatransferState.Success,
+                    StateAsText = "Herunterladen fertig..."
+                },
+                new Datatransfer
+                {
+                    Typ = DatatransferTyp.Upload,
+                    FileName = "Ferien_2023",
+                    ModificationDate = new DateTime(2022, 07, 31, 15, 30, 0).ToString("dd.MM.yyyy HH:mm"),
+                    Size = "1.5 GB",
+                    State = DatatransferState.Success,
+                    StateAsText = "Hochladen fertig..."
+                },
+                new Datatransfer
+                {
+                    Typ = DatatransferTyp.Upload,
+                    FileName = "Ferien_2021",
+                    ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                    Size = "2.3 GB",
+                    State = DatatransferState.InProgress,
+                    StateAsText = "Hochladen..."
+                }
+            };
 
         DatatransferGroups = new ObservableCollection<DatatransferGroup>
         {
