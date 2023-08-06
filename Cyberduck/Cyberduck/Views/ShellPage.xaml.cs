@@ -1,7 +1,6 @@
 ﻿using Cyberduck.Contracts.Services;
 using Cyberduck.Helpers;
 using Cyberduck.ViewModels;
-
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
@@ -11,7 +10,6 @@ using Windows.System;
 
 namespace Cyberduck.Views;
 
-// TODO: Update NavigationViewItem titles and icons in ShellPage.xaml.
 public sealed partial class ShellPage : Page
 {
     public ShellViewModel ViewModel
@@ -27,7 +25,6 @@ public sealed partial class ShellPage : Page
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
 
-        // TODO: Set the title bar icon by updating /Assets/WindowIcon.ico.
         // A custom title bar is required for full window theme and Mica support.
         // https://docs.microsoft.com/windows/apps/develop/title-bar?tabs=winui3#full-customization
         App.MainWindow.ExtendsContentIntoTitleBar = true;
@@ -63,6 +60,7 @@ public sealed partial class ShellPage : Page
         };
     }
 
+
     private static KeyboardAccelerator BuildKeyboardAccelerator(VirtualKey key, VirtualKeyModifiers? modifiers = null)
     {
         var keyboardAccelerator = new KeyboardAccelerator() { Key = key };
@@ -85,4 +83,50 @@ public sealed partial class ShellPage : Page
 
         args.Handled = result;
     }
+
+    private async void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+    {
+        if (args.SelectedItem is NavigationViewItem selectedNavItem)
+        {
+            if (selectedNavItem == NewConnectionNavItem)
+            {
+                // Öffne das Dialogfenster für "Neue Verbindung erstellen"
+                 await DisplayNewConnectionDialog();
+            }
+        }
+    }
+
+    // Shows dialog for creating a new connection
+    private async Task DisplayNewConnectionDialog()
+    {
+        ContentDialog dialog = new ContentDialog();
+
+        dialog.XamlRoot = this.XamlRoot;
+        dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+        dialog.Title = "Neue Verbindung erstellen";
+        dialog.PrimaryButtonText = "Manuelle Verbindung erstellen";
+        dialog.CloseButtonText = "Abbrechen";
+        dialog.DefaultButton = ContentDialogButton.Primary;
+        dialog.Content = new NewConnectionDialogContent();
+        
+        await dialog.ShowAsync();
+    }
+
+    // Handle text change and present suitable items
+    private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+    {
+        // Since selecting an item will also change the text,
+        // only listen to changes caused by user entering text.
+        if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+        {
+           //TODO
+        }
+    }
+
+    // Handle user selecting an item, in our case just output the selected item.
+    private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+    {
+        //TODO
+    }
+
 }

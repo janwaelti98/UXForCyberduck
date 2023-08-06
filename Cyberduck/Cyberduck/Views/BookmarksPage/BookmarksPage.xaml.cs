@@ -4,16 +4,16 @@ using Microsoft.UI.Xaml.Controls;
 
 namespace Cyberduck.Views;
 
-public sealed partial class VerlaufPage : Page
+public sealed partial class LesezeichenPage : Page
 {
-    public VerlaufViewModel ViewModel
+    public BookmarksViewModel ViewModel
     {
         get;
     }
 
-    public VerlaufPage()
+    public LesezeichenPage()
     {
-        ViewModel = App.GetService<VerlaufViewModel>();
+        ViewModel = App.GetService<BookmarksViewModel>();
         InitializeComponent();
     }
 }

@@ -11,6 +11,7 @@ using Cyberduck.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
+using TestApp.Core.Services;
 
 namespace Cyberduck;
 
@@ -66,18 +67,21 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             // Core Services
+            services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
 
             // Views and ViewModels
+            services.AddTransient<NewConnectionDialogContentViewModel>();
+            services.AddTransient<NewConnectionDialogContent>();
             services.AddTransient<SettingsViewModel>();
             services.AddTransient<SettingsPage>();
-            services.AddTransient<DateitransfersViewModel>();
+            services.AddTransient<DatatransferViewModel>();
             services.AddTransient<DateitransfersPage>();
             services.AddTransient<BonjourViewModel>();
             services.AddTransient<BonjourPage>();
-            services.AddTransient<VerlaufViewModel>();
+            services.AddTransient<HistoryViewModel>();
             services.AddTransient<VerlaufPage>();
-            services.AddTransient<LesezeichenViewModel>();
+            services.AddTransient<BookmarksViewModel>();
             services.AddTransient<LesezeichenPage>();
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();

@@ -10,12 +10,13 @@
     <Page.Resources>
         <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
     </Page.Resources>
-    <Grid>
+    <Grid Margin="48">
         <StackPanel
             x:Name="ContentArea">
-            <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
-            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
-                <TextBlock x:Uid="Settings_Theme" />
+            <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" Margin="{StaticResource SmallBottomMargin}" />
+            <StackPanel Margin="{StaticResource LargeBottomMargin}">
+               
+                <TextBlock x:Uid="Settings_Theme"/>
 
                 <StackPanel Margin="{StaticResource XSmallTopMargin}">
                     <RadioButton
@@ -51,15 +52,17 @@
                 </StackPanel>
             </StackPanel>
 
-            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" Margin="{StaticResource SmallBottomMargin}"/>
 
-            <StackPanel Margin="{StaticResource XSmallTopMargin}">
+            <StackPanel Margin="{StaticResource LargeBottomMargin}">
                 <TextBlock Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" Style="{ThemeResource BodyTextBlockStyle}" />
 
                 <TextBlock
                     x:Uid="Settings_AboutDescription"
                     Margin="{StaticResource XSmallTopMargin}"
-                    Style="{ThemeResource BodyTextBlockStyle}" />
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    HorizontalAlignment="Left"
+                    MaxWidth="600"/>
                 <HyperlinkButton x:Uid="SettingsPage_PrivacyTermsLink" Margin="{StaticResource SettingsPageHyperlinkButtonMargin}" />
             </StackPanel>
         </StackPanel>
