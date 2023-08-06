@@ -42,4 +42,11 @@ public class Datatransfer
         get;
         set;
     }
+
+    public int? Progress
+    {
+        get;
+        set;
+    }
+
 }

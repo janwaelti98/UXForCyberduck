@@ -5,7 +5,22 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="using:Cyberduck.Views.DatatransferPage.Components"
+    xmlns:local1="using:Cyberduck.Helpers"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="DatatransferTemplate">
+            <local:Datatransfer />
+        </DataTemplate>
+
+        <DataTemplate x:Key="DatatransferGroupTemplate">
+            <local:DatatransferGroup />
+        </DataTemplate>
+
+        <local1:DatatransferTemplateSelector x:Key="CombinedTemplateSelector"
+            DatatransferTemplate="{StaticResource DatatransferTemplate}"
+            DatatransferGroupTemplate="{StaticResource DatatransferGroupTemplate}" />
+    </Page.Resources>
 
     <Grid x:Name="ContentArea">
         <Grid.RowDefinitions>
@@ -16,12 +31,12 @@
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
 
-        <!-- ListView for Datatransfers -->
-        <ListView Grid.Row="1" ItemsSource="{Binding Datatransfers}"  Margin="48 0 48 0">
-
+        <!-- ListView for CombinedList -->
+        <ListView Grid.Row="1" ItemsSource="{Binding DatatransferObjects}" Margin="48 0 48 0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Margin" Value="0 0 0 8" />
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
@@ -37,17 +52,9 @@
                 </Style>
             </ListView.ItemContainerStyle>
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Margin="0 0 0 8">
-                        <local:Datatransfer/>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-            <local:DatatransferGroup/>
+            <ListView.ItemTemplateSelector>
+                <StaticResource ResourceKey="CombinedTemplateSelector" />
+            </ListView.ItemTemplateSelector>
         </ListView>
-
-      
     </Grid>
 </Page>

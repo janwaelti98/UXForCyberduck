@@ -9,8 +9,9 @@
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:local="using:Cyberduck.Views.DatatransferPage.Components"
     Loaded="OnLoaded">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

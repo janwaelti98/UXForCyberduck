@@ -63,11 +63,13 @@
             <InfoBadge x:Name="infoBadge2" Style="{StaticResource SuccessIconInfoBadgeStyle}" />
         </StackPanel>
 
-       
         <!-- Progress -->
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Margin="0 12 0 0" Visibility="{Binding State, Converter={StaticResource StateToVisibilityConverter}}">
-            <ProgressBar Value="75" />
-            <TextBlock Text="75%" FontSize="14" TextWrapping="NoWrap" Margin="0 0 4 0" />
+            <ProgressBar Value="{Binding Progress}" />
+            <TextBlock FontSize="14" TextWrapping="NoWrap" Margin="0 0 4 0">
+                <Run Text="{Binding Progress}" />
+                <Run Text="%"/>
+            </TextBlock>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -17,14 +17,13 @@ public class DatatransferTypeToIconConverter : IValueConverter
             switch (type)
             {
                 case DatatransferTyp.Download:
-                    return "\uE896"; // Use the appropriate Unicode value for the download icon
+                    return "\uE896";
                 case DatatransferTyp.Upload:
-                    return "\uE898"; // Use the appropriate Unicode value for the upload icon
-                                     // Add more cases for other DatatransferTyp values if needed
+                    return "\uE898";
             }
         }
 
-        return DependencyProperty.UnsetValue; // Default value if no match found
+        return DependencyProperty.UnsetValue;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
