@@ -10,6 +10,7 @@
 
     <UserControl.Resources>
         <local1:DatatransferTypeToIconConverter x:Key="TypeToIconConverter" />
+        <local1:DatatransferStateToIconConverter x:Key="StateToIconConverter" />
         <local1:StateToVisibilityConverter x:Key="StateToVisibilityConverter" />
     </UserControl.Resources>
 
@@ -57,10 +58,18 @@
             <TextBlock Text="{Binding Size}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 
+        <!-- State --><!--
+        <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" Margin="16 0 48 0" HorizontalAlignment="Left">
+            --><!-- TODO fix show icon--><!--
+            <InfoBadge x:Name="infoBadge2" Style="{StaticResource SuccessIconInfoBadgeStyle}" />
+            <ProgressRing IsActive="True" Width="10" Height="10" />
+        </StackPanel>-->
+
+
         <!-- State -->
         <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" Margin="16 0 48 0" HorizontalAlignment="Left">
-            <!-- TODO fix show icon-->
-            <InfoBadge x:Name="infoBadge2" Style="{StaticResource SuccessIconInfoBadgeStyle}" />
+            <!--<ProgressRing IsActive="True" Width="10" Height="10" Visibility="{Binding State, Converter={StaticResource StateToVisibilityConverter}, ConverterParameter=Progress}" />-->
+            <InfoBadge x:Name="infoBadge2" Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
         </StackPanel>
 
         <!-- Progress -->

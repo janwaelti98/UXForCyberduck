@@ -23,8 +23,8 @@ public partial class DatatransferViewModel : ObservableRecipient
                 FileName = "Bilder",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                 Size = "80 MB",
-                State = DatatransferState.Success,
-                StateAsText = "Herunterladen fertig..."
+                State = DatatransferState.Critical,
+                StateAsText = "Herunterladen fehlgeschlagen"
             },
             new DatatransferGroup
             {
@@ -55,7 +55,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                 ModificationDate = new DateTime(2022, 07, 31, 15, 30, 0).ToString("dd.MM.yyyy HH:mm"),
                 Size = "1.5 GB",
                 State = DatatransferState.Success,
-                StateAsText = "Hochladen fertig..."
+                StateAsText = "Hochladen fertig"
             },
             new Datatransfer
             {
