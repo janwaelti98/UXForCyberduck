@@ -8,5 +8,6 @@ namespace Cyberduck.Core.Models;
 public enum DatatransferTyp
 {
     Download,
-    Upload
+    Upload,
+    Unknown
 }

@@ -8,22 +8,37 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml;
 
 namespace Cyberduck.Helpers;
+
 public class DatatransferTypeToIconConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, string language)
     {
-        if (value is DatatransferTyp type)
+        if (value is Datatransfer datatransfer)
         {
-            switch (type)
+            return GetIconForDatatransferType(datatransfer.Typ);
+        }
+        else if (value is DatatransferGroup datatransferGroup)
+        {
+            if (datatransferGroup.Items != null && datatransferGroup.Items.Any())
             {
-                case DatatransferTyp.Download:
-                    return "\uE896";
-                case DatatransferTyp.Upload:
-                    return "\uE898";
+                return GetIconForDatatransferType(datatransferGroup.Items.First().Typ);
             }
         }
 
         return DependencyProperty.UnsetValue;
+    }
+
+    private string GetIconForDatatransferType(DatatransferTyp type)
+    {
+        switch (type)
+        {
+            case DatatransferTyp.Download:
+                return "\uE896";
+            case DatatransferTyp.Upload:
+                return "\uE898";
+            default:
+                return null;
+        }
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
