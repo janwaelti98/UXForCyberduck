@@ -30,7 +30,7 @@
         </Grid>
 
         <!-- ListView for History Items -->
-        <ListView Grid.Row="2" ItemsSource="{Binding HistoryItems}"  Margin="48 0 48 0">
+        <ListView Grid.Row="2" ItemsSource="{Binding HistoryItems}"  Margin="48 0 36 0" Padding="0 0 12 0">
             <!-- Custom style  -->
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
