@@ -7,10 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <UserControl.Resources>
-        <local:IconConverter x:Key="IconConverter" />
-    </UserControl.Resources>
-
     <Grid
         CornerRadius="4"
         Padding="16"
@@ -29,7 +25,7 @@
         <!-- Icon -->
         <!-- TODO Fix Binding issue! -->
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <FontIcon Glyph="{Binding Icon, Converter={StaticResource IconConverter}}" />
+            <FontIcon Glyph="&#xEDA2;" />
         </StackPanel>
 
         <!-- Connection Description -->
