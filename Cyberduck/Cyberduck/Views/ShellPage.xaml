@@ -501,6 +501,9 @@
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE8CB;"/>
                     </NavigationViewItem.Icon>
+                    <NavigationViewItem.InfoBadge>
+                        <InfoBadge Value="1"/>
+                    </NavigationViewItem.InfoBadge>
                 </NavigationViewItem>
 
                 <NavigationViewItemSeparator/>
