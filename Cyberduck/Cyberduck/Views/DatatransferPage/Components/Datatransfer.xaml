@@ -60,7 +60,7 @@
 
         <!-- State -->
         <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" Margin="16 0 48 0" HorizontalAlignment="Left">
-            <InfoBadge x:Name="infoBadge2" Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
+            <InfoBadge Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
         </StackPanel>
         
         <!-- Progress -->
