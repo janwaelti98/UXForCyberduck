@@ -25,7 +25,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                 Size = "2.3 GB",
                 State = DatatransferState.InProgress,
                 StateAsText = "Hochladen...",
-                Progress = 75
+                Progress = 46
             },
             new Datatransfer
             {
