@@ -15,5 +15,7 @@ public sealed partial class LesezeichenPage : Page
     {
         ViewModel = App.GetService<BookmarksViewModel>();
         InitializeComponent();
+
+        DataContext = new BookmarksViewModel();
     }
 }

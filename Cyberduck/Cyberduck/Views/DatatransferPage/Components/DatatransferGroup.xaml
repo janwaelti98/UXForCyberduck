@@ -45,7 +45,7 @@
                     </TextBlock>
                     <TextBlock Text="{Binding Items[0].StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
                 </StackPanel>
-
+                
                 <!-- Modification Date -->
                 <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="24 0 24 0">
                     <TextBlock Text="{Binding Items[0].ModificationDate}" FontSize="14" TextWrapping="NoWrap" />

@@ -19,7 +19,7 @@ public partial class DatatransferViewModel : ObservableRecipient
         {
             new Datatransfer
             {
-                Typ = DatatransferTyp.Upload,
+                Type = DatatransferTyp.Upload,
                 FileName = "Ferien_2021",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                 Size = "2.3 GB",
@@ -29,7 +29,7 @@ public partial class DatatransferViewModel : ObservableRecipient
             },
             new Datatransfer
             {
-                Typ = DatatransferTyp.Download,
+                Type = DatatransferTyp.Download,
                 FileName = "Bilder",
                 ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                 Size = "80 MB",
@@ -42,7 +42,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                 {
                     new Datatransfer
                     {
-                        Typ = DatatransferTyp.Download,
+                        Type = DatatransferTyp.Download,
                         FileName = "exampleFile.txt",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "37 KiB",
@@ -51,7 +51,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                     },
                     new Datatransfer
                     {
-                        Typ = DatatransferTyp.Download,
+                        Type = DatatransferTyp.Download,
                         FileName = "exampleFile2.txt",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "12 KiB",
@@ -60,7 +60,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                     },
                     new Datatransfer
                     {
-                        Typ = DatatransferTyp.Download,
+                        Type = DatatransferTyp.Download,
                         FileName = "exampleFile3.txt",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "15 KiB",
@@ -71,7 +71,7 @@ public partial class DatatransferViewModel : ObservableRecipient
             },
             new Datatransfer
             {
-                Typ = DatatransferTyp.Upload,
+                Type = DatatransferTyp.Upload,
                 FileName = "Ferien_2023",
                 ModificationDate = new DateTime(2022, 07, 31, 15, 30, 0).ToString("dd.MM.yyyy HH:mm"),
                 Size = "1.5 GB",
@@ -84,7 +84,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                 {
                     new Datatransfer
                     {
-                        Typ = DatatransferTyp.Download,
+                        Type = DatatransferTyp.Download,
                         FileName = "Grouped Item 1",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "42 KiB",
@@ -93,7 +93,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                     },
                     new Datatransfer
                     {
-                        Typ = DatatransferTyp.Download,
+                        Type = DatatransferTyp.Download,
                         FileName = "Grouped Item 2",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "22 KiB",

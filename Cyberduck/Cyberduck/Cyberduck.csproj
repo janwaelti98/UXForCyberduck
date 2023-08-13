@@ -15,6 +15,9 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Views\BookmarksPage\Components\Bookmark.xaml" />
+    <None Remove="Views\BookmarksPage\Components\BookmarkGroup.xaml" />
+    <None Remove="Views\BookmarksPage\Components\BookmarkGroupItem.xaml" />
     <None Remove="Views\BookmarksPage\Components\BookmarksCommandBar.xaml" />
     <None Remove="Views\DatatransferPage\Components\Datatransfer.xaml" />
     <None Remove="Views\DatatransferPage\Components\DatatransferCommandBar.xaml" />
@@ -45,6 +48,15 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\BookmarksPage\Components\BookmarkGroupItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\BookmarksPage\Components\BookmarkGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\BookmarksPage\Components\Bookmark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\DatatransferPage\Components\DatatransferGroupItem.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

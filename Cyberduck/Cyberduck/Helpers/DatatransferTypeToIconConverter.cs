@@ -15,13 +15,13 @@ public class DatatransferTypeToIconConverter : IValueConverter
     {
         if (value is Datatransfer datatransfer)
         {
-            return GetIconForDatatransferType(datatransfer.Typ);
+            return GetIconForDatatransferType(datatransfer.Type);
         }
         else if (value is DatatransferGroup datatransferGroup)
         {
             if (datatransferGroup.Items != null && datatransferGroup.Items.Any())
             {
-                return GetIconForDatatransferType(datatransferGroup.Items.First().Typ);
+                return GetIconForDatatransferType(datatransferGroup.Items.First().Type);
             }
         }
 

@@ -5,48 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Cyberduck.Core.Models;
-public class Datatransfer
+public class Bookmark
 {
-    public DatatransferTyp Type
+    public string Icon
     {
         get;
         set;
     }
 
-    public string FileName
+    public string ConnectionName
+    {
+        get;
+        set;
+    }
+    public string ConnectionAdress
+    {
+        get;
+        set;
+    }
+    public string Username
     {
         get;
         set;
     }
 
+    public List<Tag> Tags
+    {
+        get;
+        set;
+    }
     public string ModificationDate
     {
         get;
         set;
     }
 
-    public string Size
+    public string Type
     {
         get;
         set;
     }
-
-    public DatatransferState State
-    {
-        get;
-        set; 
-    }
-
-    public string StateAsText
-    {
-        get;
-        set;
-    }
-
-    public int? Progress
-    {
-        get;
-        set;
-    }
-
 }
