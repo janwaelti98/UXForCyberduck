@@ -59,45 +59,37 @@ public partial class BookmarksViewModel : ObservableRecipient
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Tags = new List<Tag>
                         {
-                            new Tag { Tagname = "Privat", Color = "#82aa45" },
-                            new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
+                            new Tag { Tagname = "Privat", Color = "#c95c2e" },
                         },
                         Type = "Verbindung"
                     },
                     new Bookmark
                     {
                         Icon = "E707",
-                        ConnectionName = "OneDrive - privat",
-                        ConnectionAdress = "onedrive.live.com/privat",
-                        Username = "johndoe@hotmail.com",
+                        ConnectionName = "Geschäftsbericht_2021",
+                        ConnectionAdress = "s3.amazonaws.com/mybucket/2021",
+                        Username = "johndoe@aws.com",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Tags = new List<Tag>
                         {
-                            new Tag { Tagname = "Privat", Color = "#82aa45" },
-                            new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
+                            new Tag { Tagname = "Arbeit", Color = "#fcba03" },
                         },
                         Type = "Verbindung"
                     },
                     new Bookmark
                     {
                         Icon = "E707",
-                        ConnectionName = "OneDrive - privat",
-                        ConnectionAdress = "onedrive.live.com/privat",
-                        Username = "johndoe@hotmail.com",
+                        ConnectionName = "Legacy",
+                        ConnectionAdress = "ftp://ftp.example.com/legacy",
+                        Username = "johndoe",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                        Tags = new List<Tag>
-                        {
-                            new Tag { Tagname = "Privat", Color = "#82aa45" },
-                            new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                        },
                         Type = "Verbindung"
                     },
                 },
                 Tags = new List<Tag>
                 {
+                     new Tag { Tagname = "Privat", Color = "#c95c2e" },
                      new Tag { Tagname = "Arbeit", Color = "#fcba03" },
-                     new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" },
-                     new Tag { Tagname = "Example Tag 2", Color = "#306fb8" }
                 }
             },
         };

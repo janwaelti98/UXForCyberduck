@@ -31,7 +31,7 @@
         </StackPanel>
 
         <!-- Connection Description -->
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="150">
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="200">
             <TextBlock Text="{Binding ConnectionName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
             <TextBlock Text="{Binding ConnectionAdress}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
             <TextBlock Text="{Binding Username}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
@@ -64,7 +64,7 @@
         </ScrollViewer>
 
         <!-- Modification Date -->
-        <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0 0 8 0">
+        <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0 0 48 0">
             <TextBlock Text="{Binding ModificationDate}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 

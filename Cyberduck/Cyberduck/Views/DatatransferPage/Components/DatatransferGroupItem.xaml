@@ -12,7 +12,7 @@
         <local:DatatransferStateToIconConverter x:Key="StateToIconConverter" />
     </UserControl.Resources>
 
-    <Grid Padding="36 0 44 0" ColumnSpacing="16" Height="Auto" HorizontalAlignment="Stretch">
+    <Grid ColumnSpacing="16" Height="Auto" HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -25,23 +25,23 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <!-- Connection Description -->
-        <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" MinWidth="150">
+        <!-- Filename -->
+        <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" MinWidth="150" Margin="36 0 0 0">
             <TextBlock Text="{Binding FileName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
         </StackPanel>
 
         <!-- Modification Date -->
-        <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Margin="24 0 24 0">
+        <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 48 0">
             <TextBlock Text="{Binding ModificationDate}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 
         <!-- File Size -->
-        <StackPanel Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Margin="24 0 24 0">
+        <StackPanel Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 48 0">
             <TextBlock Text="{Binding Size}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 
         <!-- State -->
-        <StackPanel Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="24 0 4 0">
+        <StackPanel Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 48 0">
             <!-- TODO fix show icon-->
             <InfoBadge Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
         </StackPanel>

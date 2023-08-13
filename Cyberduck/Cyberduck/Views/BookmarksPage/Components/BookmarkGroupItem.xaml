@@ -28,7 +28,7 @@
         </StackPanel>
 
         <!-- Connection Description -->
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="150">
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="200">
             <TextBlock Text="{Binding ConnectionName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
             <TextBlock Text="{Binding ConnectionAdress}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
             <TextBlock Text="{Binding Username}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
@@ -61,14 +61,14 @@
         </ScrollViewer>
 
         <!-- Modification Date -->
-        <StackPanel Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Margin="24 0 24 0">
+        <StackPanel Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 48 0">
             <TextBlock Text="{Binding ModificationDate}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 
         <!-- Type -->
-        <StackPanel Grid.Column="4" Grid.Row="0" VerticalAlignment="Center">
+        <StackPanel Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 18 0">
             <!-- TODO fix show icon-->
-            <TextBlock Text="{Binding Type}" FontSize="14" TextWrapping="NoWrap" />
+           <TextBlock Text="{Binding Type}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 
         <Border Grid.Row="1" Grid.ColumnSpan="5" BorderThickness="0,1,0,0" BorderBrush="LightGray" Margin="0,10,0,0"/>

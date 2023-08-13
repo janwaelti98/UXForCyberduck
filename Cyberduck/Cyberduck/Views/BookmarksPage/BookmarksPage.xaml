@@ -35,13 +35,15 @@
         <!-- Column Titles -->
         <Grid Grid.Row="1"  Margin="48 12 48 12">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="232" />
+                <ColumnDefinition Width="282" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="168" />
+                <ColumnDefinition Width="106" />
             </Grid.ColumnDefinitions>
             <TextBlock Margin="52 0 0 0" Text="Name" FontSize="14" Grid.Column="0" Foreground="Gray"/>
             <TextBlock Text="Tag" FontSize="14" Grid.Column="1" Foreground="Gray"/>
             <TextBlock Text="Änderungsdatum" FontSize="14" Grid.Column="2" Foreground="Gray"/>
+            <TextBlock Text="Typ" FontSize="14" Grid.Column="3" Foreground="Gray"/>
         </Grid>
 
         <!-- ListView for BookmarkObjects -->
