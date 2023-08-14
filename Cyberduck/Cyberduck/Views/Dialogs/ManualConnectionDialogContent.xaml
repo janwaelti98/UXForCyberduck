@@ -1,0 +1,51 @@
+<UserControl
+    x:Class="Cyberduck.Views.Dialogs.ManualConnectionDialogContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="498">
+
+        <ComboBox Header="Wähle ein Protokoll aus..." Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,14">
+            <ComboBoxItem Content="FTP (Unverschlüsselte Verbindung" IsSelected="True" />
+            <ComboBoxItem Content="FTP-SSL (Explicit AUTH TLS)" />
+            <ComboBoxItem Content="SFTP (SSH Verbindung)" />
+            <ComboBoxItem Content="(WebDAV (HTTP)" />
+            <ComboBoxItem Content="(WebDAV (HTTPS)" />
+            <ComboBoxItem Content="Amazon S3" />
+            <ComboBoxItem Content="Google Cloud Storage" />
+            <ComboBoxItem Content="OpenStack Swift (Keystone 2.0)" />
+            <ComboBoxItem Content="OpenStack Swift (Keystone 3)" />
+            <ComboBoxItem Content="Rackspace Cloud Files (US)" />
+            <ComboBoxItem Content="Windows Azure Blob Storage" />
+            <ComboBoxItem Content="Backblaze B2 Cloud Storage" />
+            <ComboBoxItem Content="Dropbox" />
+            <ComboBoxItem Content="Google Drive" />
+            <ComboBoxItem Content="Microsoft OneDrive" />
+            <ComboBoxItem Content="Microsoft SharePoint" />
+            <ComboBoxItem Content="DRACOON (OAuth)" />
+            <ComboBoxItem Content="Files.com" />
+            <ComboBoxItem Content="Nextcloud" />
+            <ComboBoxItem Content="ownCloud" />
+            <ComboBoxItem Content="Box" />
+            <ComboBoxItem Content="johndoe" />
+            <ComboBoxItem Content="FTP (Compatibility Mode)" />
+            <ComboBoxItem Content="Alibaba (Beijing)" />
+            <ComboBoxItem Content="Erweiterte Optionen..." />
+        </ComboBox>
+
+
+
+        <TextBox Header="Server" PlaceholderText="ftp.exmaple.com"/>
+        <NumberBox Header="Port"
+                   Value="21"
+                   SpinButtonPlacementMode="Compact"
+                   SmallChange="1"
+                   LargeChange="1" />
+    
+    </StackPanel>
+</UserControl>
+
+

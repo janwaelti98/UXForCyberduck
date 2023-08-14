@@ -16,14 +16,14 @@
 
     <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="498">
 
-        <TextBox Header="Quick Connect" PlaceholderText="Gib die Serveradresse ein..." Margin="0,0,0,32"/>
+        <TextBox Header="Quick Connect" PlaceholderText="Gib die Serveradresse ein..." Margin="0,0,0,14"/>
         <TextBlock Text="Wähle eine Verbindung aus deinem Verlauf..." Margin="0,0,0,8"/>
 
         <ScrollViewer Height="240" ZoomMode="Enabled" CornerRadius="8" BorderBrush="#f0f0f0" BorderThickness="1"
                       IsTabStop="True" IsVerticalScrollChainingEnabled="True"
                       HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled"
                       VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
-
+            
             <Grid x:Name="ContentArea">
                 
                 <controls:DataGrid AutoGenerateColumns="False"
