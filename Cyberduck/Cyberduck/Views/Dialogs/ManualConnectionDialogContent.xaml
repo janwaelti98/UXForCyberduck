@@ -6,7 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="498" RowSpacing="14">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0 0 12 0">
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="486" RowSpacing="14">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -63,7 +64,7 @@
                        LargeChange="1" />
         </Grid>
 
-         <!--URL--><!-- 
+         <!-- URL --> 
         <Grid Grid.Row="2" RowSpacing="14">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -75,7 +76,7 @@
             </TextBlock>
         </Grid>
 
-         --><!--Username--><!-- 
+         <!-- Username --> 
         <Grid Grid.Row="3" RowSpacing="14">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -83,13 +84,13 @@
             <TextBox Grid.Row="0" Header="Benutzername" PlaceholderText="johndoe"/>
         </Grid>
 
-         --><!--Password--><!-- 
+         <!-- Password --> 
         <Grid Grid.Row="4" RowSpacing="14">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <TextBox Grid.Row="0" Header="Passwort" PlaceholderText="12345"/>
-        </Grid>-->
+        </Grid>
         
         
         <!-- Checkboxes login -->
@@ -103,103 +104,101 @@
         </Grid>
         
         <!-- Further options -->
-        <Grid Grid.Row="6">
-            <Expander HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
-                <Expander.Header>
-                    <TextBlock Text="Erweiterte Optionen" FontSize="14"/>
-                </Expander.Header>
-                <Expander.Content>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
+            <Grid Grid.Row="6">
+                <Expander HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                    <Expander.Header>
+                        <TextBlock Text="Erweiterte Optionen" FontSize="14"/>
+                    </Expander.Header>
+                    <Expander.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                        <TextBox Grid.Row="0" Header="Pfad" PlaceholderText="ftp://johndoe@host/foo/bar.txt" Margin="0 0 0 12"/>
+                            <TextBox Grid.Row="0" Header="Pfad" PlaceholderText="ftp://johndoe@host/foo/bar.txt" Margin="0 0 0 12"/>
 
-                        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0,1,0,0"/>
+                            <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0,1,0,0"/>
 
-                        <ComboBox Grid.Row="1" Header="Verbindungsmodus" HorizontalAlignment="Stretch" Margin="0 12 0 12">
-                            <ComboBoxItem Content="Standard" IsSelected="True" />
-                            <ComboBoxItem Content="Aktiv (PORT)" />
-                            <ComboBoxItem Content="Passiv (PASV)" />
-                        </ComboBox>
+                            <ComboBox Grid.Row="1" Header="Verbindungsmodus" HorizontalAlignment="Stretch" Margin="0 12 0 12">
+                                <ComboBoxItem Content="Standard" IsSelected="True" />
+                                <ComboBoxItem Content="Aktiv (PORT)" />
+                                <ComboBoxItem Content="Passiv (PASV)" />
+                            </ComboBox>
 
-                        <Border Grid.Row="2" BorderBrush="LightGray" BorderThickness="0,1,0,0"/>
+                            <Border Grid.Row="2" BorderBrush="LightGray" BorderThickness="0,1,0,0"/>
 
-                        <ComboBox Grid.Row="2" Header="Zeichencodierung" HorizontalAlignment="Stretch" Margin="0 12 0 0">
-                            <ComboBoxItem Content="Standard" />
-                            <ComboBoxItem Content="Big5" />
-                            <ComboBoxItem Content="Big5-HKSCS" />
-                            <ComboBoxItem Content="CESU-8" />
-                            <ComboBoxItem Content="EUC-JP" />
-                            <ComboBoxItem Content="EUC-KR" />
-                            <ComboBoxItem Content="GB18030" />
-                            <ComboBoxItem Content="GE2312" />
-                            <ComboBoxItem Content="GBK" />
-                            <ComboBoxItem Content="ISO-2022-CN" />
-                            <ComboBoxItem Content="ISO-2022-JP" />
-                            <ComboBoxItem Content="ISO-2022-JP-2" />
-                            <ComboBoxItem Content="ISO-2022-KR" />
-                            <ComboBoxItem Content="ISO-8859-1" />
-                            <ComboBoxItem Content="ISO-8859-13" />
-                            <ComboBoxItem Content="ISO-8859-15" />
-                            <ComboBoxItem Content="ISO-8859-2" />
-                            <ComboBoxItem Content="ISO-8859-3" />
-                            <ComboBoxItem Content="ISO-8859-4" />
-                            <ComboBoxItem Content="ISO-8859-5" />
-                            <ComboBoxItem Content="ISO-8859-6" />
-                            <ComboBoxItem Content="ISO-8859-7" />
-                            <ComboBoxItem Content="ISO-8859-8" />
-                            <ComboBoxItem Content="ISO-8859-9" />
-                            <ComboBoxItem Content="JIS_X0201" />
-                            <ComboBoxItem Content="JIS_X0212-1990" />
-                            <ComboBoxItem Content="KOI8-R" />
-                            <ComboBoxItem Content="KOI8-U" />
-                            <ComboBoxItem Content="Shift_JIS" />
-                            <ComboBoxItem Content="TIS-620" />
-                            <ComboBoxItem Content="US-ASCII" />
-                            <ComboBoxItem Content="UTF-16" />
-                            <ComboBoxItem Content="UTF-16BE" />
-                            <ComboBoxItem Content="UTF-16LE" />
-                            <ComboBoxItem Content="UTF-32" />
-                            <ComboBoxItem Content="UTF-32BE" />
-                            <ComboBoxItem Content="UTF-32LE" />
-                            <ComboBoxItem Content="UTF-8" IsSelected="True"/>
-                            <ComboBoxItem Content="windows-1250" />
-                            <ComboBoxItem Content="windows-1251" />
-                            <ComboBoxItem Content="windows-1252" />
-                            <ComboBoxItem Content="windows-1253" />
-                            <ComboBoxItem Content="windows-1254" />
-                            <ComboBoxItem Content="windows-1255" />
-                            <ComboBoxItem Content="windows-1256" />
-                            <ComboBoxItem Content="windows-1257" />
-                            <ComboBoxItem Content="windows-1258" />
-                            <ComboBoxItem Content="windows-31j" />
-                            <ComboBoxItem Content="x-MacArabic" />
-                            <ComboBoxItem Content="x-MacCentralEurope" />
-                            <ComboBoxItem Content="x-MacCroatian" />
-                            <ComboBoxItem Content="x-MacCyrillic" />
-                            <ComboBoxItem Content="x-MacDingbat" />
-                            <ComboBoxItem Content="x-MacGreek" />
-                            <ComboBoxItem Content="x-MacHebrew" />
-                            <ComboBoxItem Content="x-MacIceland" />
-                            <ComboBoxItem Content="x-MacRoman" />
-                            <ComboBoxItem Content="x-MacRomania" />
-                            <ComboBoxItem Content="x-MacSymbol" />
-                            <ComboBoxItem Content="x-MacThai" />
-                            <ComboBoxItem Content="x-MacTurkish" />
-                            <ComboBoxItem Content="x-MacUkraine" />
-                            <ComboBoxItem Content="X-UTF-32BE-BOM" />
-                            <ComboBoxItem Content="X-UTF-32LE-BOM" />
-                        </ComboBox>
-                    </Grid>
-                </Expander.Content>
-            </Expander>
-
-
+                            <ComboBox Grid.Row="2" Header="Zeichencodierung" HorizontalAlignment="Stretch" Margin="0 12 0 0">
+                                <ComboBoxItem Content="Standard" />
+                                <ComboBoxItem Content="Big5" />
+                                <ComboBoxItem Content="Big5-HKSCS" />
+                                <ComboBoxItem Content="CESU-8" />
+                                <ComboBoxItem Content="EUC-JP" />
+                                <ComboBoxItem Content="EUC-KR" />
+                                <ComboBoxItem Content="GB18030" />
+                                <ComboBoxItem Content="GE2312" />
+                                <ComboBoxItem Content="GBK" />
+                                <ComboBoxItem Content="ISO-2022-CN" />
+                                <ComboBoxItem Content="ISO-2022-JP" />
+                                <ComboBoxItem Content="ISO-2022-JP-2" />
+                                <ComboBoxItem Content="ISO-2022-KR" />
+                                <ComboBoxItem Content="ISO-8859-1" />
+                                <ComboBoxItem Content="ISO-8859-13" />
+                                <ComboBoxItem Content="ISO-8859-15" />
+                                <ComboBoxItem Content="ISO-8859-2" />
+                                <ComboBoxItem Content="ISO-8859-3" />
+                                <ComboBoxItem Content="ISO-8859-4" />
+                                <ComboBoxItem Content="ISO-8859-5" />
+                                <ComboBoxItem Content="ISO-8859-6" />
+                                <ComboBoxItem Content="ISO-8859-7" />
+                                <ComboBoxItem Content="ISO-8859-8" />
+                                <ComboBoxItem Content="ISO-8859-9" />
+                                <ComboBoxItem Content="JIS_X0201" />
+                                <ComboBoxItem Content="JIS_X0212-1990" />
+                                <ComboBoxItem Content="KOI8-R" />
+                                <ComboBoxItem Content="KOI8-U" />
+                                <ComboBoxItem Content="Shift_JIS" />
+                                <ComboBoxItem Content="TIS-620" />
+                                <ComboBoxItem Content="US-ASCII" />
+                                <ComboBoxItem Content="UTF-16" />
+                                <ComboBoxItem Content="UTF-16BE" />
+                                <ComboBoxItem Content="UTF-16LE" />
+                                <ComboBoxItem Content="UTF-32" />
+                                <ComboBoxItem Content="UTF-32BE" />
+                                <ComboBoxItem Content="UTF-32LE" />
+                                <ComboBoxItem Content="UTF-8" IsSelected="True"/>
+                                <ComboBoxItem Content="windows-1250" />
+                                <ComboBoxItem Content="windows-1251" />
+                                <ComboBoxItem Content="windows-1252" />
+                                <ComboBoxItem Content="windows-1253" />
+                                <ComboBoxItem Content="windows-1254" />
+                                <ComboBoxItem Content="windows-1255" />
+                                <ComboBoxItem Content="windows-1256" />
+                                <ComboBoxItem Content="windows-1257" />
+                                <ComboBoxItem Content="windows-1258" />
+                                <ComboBoxItem Content="windows-31j" />
+                                <ComboBoxItem Content="x-MacArabic" />
+                                <ComboBoxItem Content="x-MacCentralEurope" />
+                                <ComboBoxItem Content="x-MacCroatian" />
+                                <ComboBoxItem Content="x-MacCyrillic" />
+                                <ComboBoxItem Content="x-MacDingbat" />
+                                <ComboBoxItem Content="x-MacGreek" />
+                                <ComboBoxItem Content="x-MacHebrew" />
+                                <ComboBoxItem Content="x-MacIceland" />
+                                <ComboBoxItem Content="x-MacRoman" />
+                                <ComboBoxItem Content="x-MacRomania" />
+                                <ComboBoxItem Content="x-MacSymbol" />
+                                <ComboBoxItem Content="x-MacThai" />
+                                <ComboBoxItem Content="x-MacTurkish" />
+                                <ComboBoxItem Content="x-MacUkraine" />
+                                <ComboBoxItem Content="X-UTF-32BE-BOM" />
+                                <ComboBoxItem Content="X-UTF-32LE-BOM" />
+                            </ComboBox>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+            </Grid>
         </Grid>
-        
-    </Grid>
+    </ScrollViewer>
 </UserControl>
