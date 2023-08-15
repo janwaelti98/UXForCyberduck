@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using Cyberduck.ViewModels;
-using Microsoft.UI.Xaml;
+﻿using Cyberduck.ViewModels;
 using Microsoft.UI.Xaml.Controls;
 
 namespace Cyberduck.Views;

@@ -23,7 +23,6 @@
         </Grid.ColumnDefinitions>
 
         <!-- Icon -->
-        <!-- TODO Fix Binding issue! -->
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
             <FontIcon Glyph="&#xEDA2;" />
         </StackPanel>

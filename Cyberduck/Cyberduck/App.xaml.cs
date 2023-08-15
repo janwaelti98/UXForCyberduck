@@ -2,7 +2,6 @@
 using Cyberduck.Contracts.Services;
 using Cyberduck.Core.Contracts.Services;
 using Cyberduck.Core.Services;
-using Cyberduck.Helpers;
 using Cyberduck.Models;
 using Cyberduck.Services;
 using Cyberduck.ViewModels;
