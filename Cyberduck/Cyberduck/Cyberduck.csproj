@@ -26,7 +26,7 @@
     <None Remove="Views\Dialogs\ManualConnectionDialogContent.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryCommandBar.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryItem.xaml" />
-    <None Remove="Views\HistoryPage\Components\HistoryItemTag.xaml" />
+    <None Remove="Views\HistoryPage\Components\Tag.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,7 +70,7 @@
     <Page Update="Views\DatatransferPage\Components\Datatransfer.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="Views\HistoryPage\Components\HistoryItemTag.xaml">
+    <Page Update="Views\HistoryPage\Components\Tag.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="Views\BookmarksPage\Components\BookmarksCommandBar.xaml">
