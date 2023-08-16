@@ -1,5 +1,6 @@
 ﻿using Cyberduck.Contracts.Services;
 using Cyberduck.Helpers;
+using Cyberduck.Services;
 using Cyberduck.ViewModels;
 using Cyberduck.Views.Dialogs;
 using Microsoft.UI.Xaml;
@@ -97,10 +98,13 @@ public sealed partial class ShellPage : Page
         }
     }
 
-    // Shows dialog for creating a new connection
     private async Task DisplayNewConnectionDialog()
     {
         ContentDialog newConnectionDialog = new ContentDialog();
+
+        // Set the theme of the dialog based on the current theme
+        var themeSelectorService = App.GetService<IThemeSelectorService>();
+        newConnectionDialog.RequestedTheme = themeSelectorService.Theme;
 
         newConnectionDialog.XamlRoot = this.XamlRoot;
         newConnectionDialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
@@ -118,6 +122,10 @@ public sealed partial class ShellPage : Page
 
             // Show content dialog for manual connection
             ContentDialog manualConnectionDialog = new ContentDialog();
+
+            // Set the theme of the dialog based on the current theme
+            manualConnectionDialog.RequestedTheme = themeSelectorService.Theme;
+
             manualConnectionDialog.XamlRoot = this.XamlRoot;
             manualConnectionDialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
             manualConnectionDialog.Title = "Manuelle Verbindung erstellen";

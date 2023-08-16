@@ -40,7 +40,7 @@
                 <!-- Tags -->
                 <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
                     <ListView ItemsSource="{Binding Tags}" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
-                              IsHitTestVisible="False" SelectionMode="None">
+                      IsHitTestVisible="False" SelectionMode="None">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Left"/>

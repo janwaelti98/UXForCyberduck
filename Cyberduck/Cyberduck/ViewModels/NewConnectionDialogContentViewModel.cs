@@ -24,7 +24,7 @@ public partial class NewConnectionDialogContentViewModel : ObservableRecipient, 
                 ConnectionName = "Legacy",
                 ConnectionAdress = "ftp://ftp.example.com",
                 Username = "johndoe",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
+                ModificationDate = "25.03.2023 11:49",
                 Tags = new List<Tag>
                     {
                        new Tag { Tagname = "Arbeit", Color = "#fcba03" },
@@ -34,90 +34,6 @@ public partial class NewConnectionDialogContentViewModel : ObservableRecipient, 
                 Type = "FTP"
             },
             new HistoryItem
-            {
-                Icon = "E707",
-                ConnectionName = "OneDrive - privat",
-                ConnectionAdress = "onedrive.live.com/privat",
-                Username = "johndoe@hotmail.com",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Tags = new List<Tag>
-                    {
-                       new Tag { Tagname = "Privat", Color = "#82aa45" },
-                       new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                    },
-                Type = "OneDrive"
-            },
-             new HistoryItem
-            {
-                Icon = "E707",
-                ConnectionName = "OneDrive - privat",
-                ConnectionAdress = "onedrive.live.com/privat",
-                Username = "johndoe@hotmail.com",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Tags = new List<Tag>
-                    {
-                       new Tag { Tagname = "Privat", Color = "#82aa45" },
-                       new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                    },
-                Type = "OneDrive"
-            },
-              new HistoryItem
-            {
-                Icon = "E707",
-                ConnectionName = "OneDrive - privat",
-                ConnectionAdress = "onedrive.live.com/privat",
-                Username = "johndoe@hotmail.com",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Tags = new List<Tag>
-                    {
-                       new Tag { Tagname = "Privat", Color = "#82aa45" },
-                       new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                    },
-                Type = "OneDrive"
-            },
-               new HistoryItem
-            {
-                Icon = "E707",
-                ConnectionName = "OneDrive - privat",
-                ConnectionAdress = "onedrive.live.com/privat",
-                Username = "johndoe@hotmail.com",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Tags = new List<Tag>
-                    {
-                       new Tag { Tagname = "Privat", Color = "#82aa45" },
-                       new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                    },
-                Type = "OneDrive"
-            },
-                              new HistoryItem
-            {
-                Icon = "E707",
-                ConnectionName = "OneDrive - privat",
-                ConnectionAdress = "onedrive.live.com/privat",
-                Username = "johndoe@hotmail.com",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Tags = new List<Tag>
-                    {
-                       new Tag { Tagname = "Privat", Color = "#82aa45" },
-                       new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                    },
-                Type = "OneDrive"
-            },
-                                             new HistoryItem
-            {
-                Icon = "E707",
-                ConnectionName = "OneDrive - privat",
-                ConnectionAdress = "onedrive.live.com/privat",
-                Username = "johndoe@hotmail.com",
-                ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
-                Tags = new List<Tag>
-                    {
-                       new Tag { Tagname = "Privat", Color = "#82aa45" },
-                       new Tag { Tagname = "Example Tag 1", Color = "#c95c2e" }
-                    },
-                Type = "OneDrive"
-            },
-                                                            new HistoryItem
             {
                 Icon = "E707",
                 ConnectionName = "OneDrive - privat",
