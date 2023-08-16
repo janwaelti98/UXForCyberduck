@@ -77,16 +77,18 @@
         </Expander.Header>
         
         <Expander.Content>
-             <!--Other Items--> 
-            <ItemsControl ItemsSource="{Binding Items}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="0 0 0 10">
-                            <local1:BookmarkGroupItem DataContext="{Binding}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="228">
+                <!--Other Items-->
+                <ItemsControl ItemsSource="{Binding Items}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0 0 0 10">
+                                <local1:BookmarkGroupItem DataContext="{Binding}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
         </Expander.Content>
     </Expander>
 </UserControl>

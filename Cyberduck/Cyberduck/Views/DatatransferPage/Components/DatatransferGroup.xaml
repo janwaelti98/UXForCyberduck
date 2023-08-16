@@ -65,16 +65,18 @@
             </Grid>
         </Expander.Header>
         <Expander.Content>
-            <!-- Other Items -->
-            <ItemsControl ItemsSource="{Binding Items}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="0 0 0 10">
-                            <local:DatatransferGroupItem DataContext="{Binding}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="210">
+                <!-- Other Items -->
+                <ItemsControl ItemsSource="{Binding Items}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0 0 0 10">
+                                <local:DatatransferGroupItem DataContext="{Binding}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
         </Expander.Content>
     </Expander>
 </UserControl>

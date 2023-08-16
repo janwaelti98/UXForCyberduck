@@ -87,7 +87,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                         Type = DatatransferTyp.Download,
                         FileName = "Portugal_2022_01.jpg",
                         ModificationDate = "21.05.2023 09:23",
-                        Size = "15 KiB",
+                        Size = "9 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
                     },
@@ -96,7 +96,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                         Type = DatatransferTyp.Download,
                         FileName = "Portugal_2022_02.jpg",
                         ModificationDate = "21.05.2023 09:23",
-                        Size = "14 KiB",
+                        Size = "13 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
                     },
@@ -105,7 +105,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                         Type = DatatransferTyp.Download,
                         FileName = "Portugal_2022_03.jpg",
                         ModificationDate = "21.05.2023 09:23",
-                        Size = "12 KiB",
+                        Size = "10 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
                     },
@@ -114,7 +114,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                         Type = DatatransferTyp.Download,
                         FileName = "Portugal_2022_04.jpg",
                         ModificationDate = "21.05.2023 09:22",
-                        Size = "10 KiB",
+                        Size = "9 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
                     },
@@ -123,7 +123,16 @@ public partial class DatatransferViewModel : ObservableRecipient
                         Type = DatatransferTyp.Download,
                         FileName = "Portugal_2022_05.jpg",
                         ModificationDate = "21.05.2023 09:22",
-                        Size = "13 KiB",
+                        Size = "9 KiB",
+                        State = DatatransferState.Success,
+                        StateAsText = "Herunterladen fertig"
+                    },
+                    new Datatransfer
+                    {
+                        Type = DatatransferTyp.Download,
+                        FileName = "Portugal_2022_06.jpg",
+                        ModificationDate = "21.05.2023 09:22",
+                        Size = "14 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
                     },
