@@ -45,7 +45,7 @@
         <!-- Connection Description -->
         <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" MinWidth="150" HorizontalAlignment="Left">
             <TextBlock Text="{Binding FileName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
-            <TextBlock Text="{Binding StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+            <TextBlock Text="{Binding StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
         </StackPanel>
 
         <!-- Modification Date -->

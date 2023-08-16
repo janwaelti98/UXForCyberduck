@@ -43,7 +43,7 @@
                         <Run Text="{Binding Items.Count, Converter={StaticResource ItemsLeftConverter}, Mode=OneWay}" />
                         <Run Text="weitere)" />
                     </TextBlock>
-                    <TextBlock Text="{Binding Items[0].StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+                    <TextBlock Text="{Binding Items[0].StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
                 </StackPanel>
                 
                 <!-- Modification Date -->

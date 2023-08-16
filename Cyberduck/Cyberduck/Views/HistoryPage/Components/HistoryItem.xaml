@@ -30,8 +30,8 @@
         <!-- Connection Description -->
         <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="200">
             <TextBlock Text="{Binding ConnectionName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
-            <TextBlock Text="{Binding ConnectionAdress}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
-            <TextBlock Text="{Binding Username}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+            <TextBlock Text="{Binding ConnectionAdress}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
+            <TextBlock Text="{Binding Username}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
         </StackPanel>
 
         <!-- Tags -->

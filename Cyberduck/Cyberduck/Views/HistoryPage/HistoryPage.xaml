@@ -24,9 +24,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="120" />
             </Grid.ColumnDefinitions>
-            <TextBlock Margin="52 0 0 0" Text="Name" FontSize="14" Grid.Column="0" Foreground="Gray"/>
-            <TextBlock Text="Tag" FontSize="14" Grid.Column="1" Foreground="Gray"/>
-            <TextBlock Text="Änderungsdatum" FontSize="14" Grid.Column="2" Foreground="Gray"/>
+            <TextBlock Margin="52 0 0 0" Text="Name" FontSize="14" Grid.Column="0" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Tag" FontSize="14" Grid.Column="1" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Änderungsdatum" FontSize="14" Grid.Column="2" Foreground="{ThemeResource SubTitleColor}"/>
         </Grid>
 
         <!-- ListView for History Items -->

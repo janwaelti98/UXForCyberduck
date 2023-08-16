@@ -46,6 +46,6 @@
             <InfoBadge Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
         </StackPanel>
 
-        <Border Grid.Row="1" Grid.ColumnSpan="5" BorderThickness="0,1,0,0" BorderBrush="LightGray" Margin="0,10,0,0"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="5" BorderThickness="0,1,0,0" BorderBrush="{ThemeResource BorderColor}" Margin="0,10,0,0"/>
     </Grid>
 </UserControl>

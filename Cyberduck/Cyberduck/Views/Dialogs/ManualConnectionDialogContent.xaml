@@ -119,7 +119,7 @@
 
                             <TextBox Grid.Row="0" Header="Pfad" PlaceholderText="ftp://johndoe@host/foo/bar.txt" Margin="0 0 0 12"/>
 
-                            <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0,1,0,0"/>
+                            <Border Grid.Row="1" BorderBrush="{ThemeResource BorderColor}" BorderThickness="0,1,0,0"/>
 
                             <ComboBox Grid.Row="1" Header="Verbindungsmodus" HorizontalAlignment="Stretch" Margin="0 12 0 12">
                                 <ComboBoxItem Content="Standard" IsSelected="True" />
@@ -127,7 +127,7 @@
                                 <ComboBoxItem Content="Passiv (PASV)" />
                             </ComboBox>
 
-                            <Border Grid.Row="2" BorderBrush="LightGray" BorderThickness="0,1,0,0"/>
+                            <Border Grid.Row="2" BorderBrush="{ThemeResource BorderColor}" BorderThickness="0,1,0,0"/>
 
                             <ComboBox Grid.Row="2" Header="Zeichencodierung" HorizontalAlignment="Stretch" Margin="0 12 0 0">
                                 <ComboBoxItem Content="Standard" />
