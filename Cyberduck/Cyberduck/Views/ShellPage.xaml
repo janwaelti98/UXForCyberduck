@@ -495,7 +495,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE8CB;"/>
                     </NavigationViewItem.Icon>
                     <NavigationViewItem.InfoBadge>
-                        <InfoBadge Value="1"/>
+                        <InfoBadge Value="2"/>
                     </NavigationViewItem.InfoBadge>
                 </NavigationViewItem>
 

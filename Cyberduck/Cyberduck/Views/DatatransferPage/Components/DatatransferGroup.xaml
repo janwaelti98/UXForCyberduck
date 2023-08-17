@@ -13,6 +13,7 @@
         <local1:DatatransferTypeToIconConverter x:Key="TypeToIconConverter" />
         <local1:DatatransferStateToIconConverter x:Key="StateToIconConverter" />
         <local1:DatatransferGroupItemsLeftConverter x:Key="ItemsLeftConverter" />
+        <local1:StateToVisibilityConverter x:Key="StateToVisibilityConverter" />
     </UserControl.Resources>
 
     <Expander HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
@@ -30,36 +31,50 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
                 <!-- Icon -->
-                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <FontIcon x:Name="icon" Glyph="{Binding Converter={StaticResource TypeToIconConverter}}" />
                 </StackPanel>
 
                 <!-- Connection Description -->
-                <StackPanel Grid.Column="1" VerticalAlignment="Center" MinWidth="150">
+                <StackPanel Grid.Row="0"  Grid.Column="1" VerticalAlignment="Center" MinWidth="150">
                     <TextBlock FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4">
                         <Run Text="{Binding Items[0].FileName}" />
                         <Run Text="(" />
                         <Run Text="{Binding Items.Count, Converter={StaticResource ItemsLeftConverter}, Mode=OneWay}" />
                         <Run Text="weitere)" />
                     </TextBlock>
-                    <TextBlock Text="{Binding Items[0].StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
+                    <TextBlock Text="{Binding StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
                 </StackPanel>
                 
                 <!-- Modification Date -->
-                <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="24 0 24 0">
+                <StackPanel Grid.Row="0"  Grid.Column="3" VerticalAlignment="Center" Margin="24 0 24 0">
                     <TextBlock Text="{Binding Items[0].ModificationDate}" FontSize="14" TextWrapping="NoWrap" />
                 </StackPanel>
 
                 <!-- File Size -->
-                <StackPanel Grid.Column="4" VerticalAlignment="Center"  Margin="24 0 24 0">
+                <StackPanel Grid.Row="0"  Grid.Column="4" VerticalAlignment="Center"  Margin="24 0 24 0">
                     <!-- Caution! No Binding to ViewModel! -->
                     <TextBlock Text="64 KiB" FontSize="14" TextWrapping="NoWrap" />
                 </StackPanel>
 
                 <!-- State -->
-                <StackPanel Grid.Column="5" VerticalAlignment="Center" Margin="24 0 4 0">
-                    <InfoBadge Style="{Binding Items[0].State, Converter={StaticResource StateToIconConverter}}" />
+                <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" Margin="24 0 4 0" >
+                    <InfoBadge Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
+                </StackPanel>
+
+                <!-- Progress -->
+                <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Margin="0 12 24 0" Visibility="{Binding State, Converter={StaticResource StateToVisibilityConverter}}">
+                    <ProgressBar Value="{Binding Progress}" />
+                    <TextBlock FontSize="14" TextWrapping="NoWrap" Margin="0 0 4 0">
+                        <Run Text="{Binding Progress}" />
+                        <Run Text="%"/>
+                    </TextBlock>
                 </StackPanel>
 
             </Grid>

@@ -27,15 +27,6 @@ public partial class DatatransferViewModel : ObservableRecipient
                 StateAsText = "Hochladen...",
                 Progress = 46
             },
-            new Datatransfer
-            {
-                Type = DatatransferTyp.Download,
-                FileName = "Bilder",
-                ModificationDate = "27.07.2023 18:59",
-                Size = "80 MB",
-                State = DatatransferState.Critical,
-                StateAsText = "Herunterladen fehlgeschlagen"
-            },
             new DatatransferGroup
             {
                 Items = new List<Datatransfer>
@@ -44,7 +35,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                     {
                         Type = DatatransferTyp.Download,
                         FileName = "exampleFile.txt",
-                        ModificationDate = "24.07.2023 17:43",
+                        ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "37 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
@@ -53,7 +44,7 @@ public partial class DatatransferViewModel : ObservableRecipient
                     {
                         Type = DatatransferTyp.Download,
                         FileName = "exampleFile2.txt",
-                        ModificationDate = "24.07.2023 17:43",
+                        ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "12 KiB",
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
@@ -62,12 +53,24 @@ public partial class DatatransferViewModel : ObservableRecipient
                     {
                         Type = DatatransferTyp.Download,
                         FileName = "exampleFile3.txt",
-                        ModificationDate = "24.07.2023 17:43",
+                        ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "15 KiB",
-                        State = DatatransferState.Success,
-                        StateAsText = "Herunterladen fertig"
+                        State = DatatransferState.InProgress,
+                        StateAsText = "Herunterladen..."
                     },
-                }
+                },
+                State = DatatransferState.InProgress,
+                StateAsText = "Herunterladen...",
+                Progress = 78
+            },
+            new Datatransfer
+            {
+                Type = DatatransferTyp.Download,
+                FileName = "Bilder",
+                ModificationDate = "27.07.2023 18:59",
+                Size = "80 MB",
+                State = DatatransferState.Critical,
+                StateAsText = "Herunterladen fehlgeschlagen"
             },
             new Datatransfer
             {
@@ -136,7 +139,9 @@ public partial class DatatransferViewModel : ObservableRecipient
                         State = DatatransferState.Success,
                         StateAsText = "Herunterladen fertig"
                     },
-                }
+                },
+                State = DatatransferState.Success,
+                StateAsText = "Herunterladen fertig"
             }
         };
     }

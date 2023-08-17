@@ -12,4 +12,22 @@ public class DatatransferGroup
         get;
         set; 
     }
+
+    public DatatransferState State
+    {
+        get;
+        set;
+    }
+
+    public string StateAsText
+    {
+        get;
+        set;
+    }
+
+    public int? Progress
+    {
+        get;
+        set;
+    }
 }

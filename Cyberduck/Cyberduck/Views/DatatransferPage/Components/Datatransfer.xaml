@@ -71,5 +71,6 @@
                 <Run Text="%"/>
             </TextBlock>
         </StackPanel>
+        
     </Grid>
 </UserControl>
