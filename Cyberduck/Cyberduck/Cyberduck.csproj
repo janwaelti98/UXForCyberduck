@@ -15,14 +15,18 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Views\BookmarksPage\Components\Bookmark.xaml" />
+    <None Remove="Views\BookmarksPage\Components\BookmarkGroup.xaml" />
+    <None Remove="Views\BookmarksPage\Components\BookmarkGroupItem.xaml" />
     <None Remove="Views\BookmarksPage\Components\BookmarksCommandBar.xaml" />
     <None Remove="Views\DatatransferPage\Components\Datatransfer.xaml" />
     <None Remove="Views\DatatransferPage\Components\DatatransferCommandBar.xaml" />
     <None Remove="Views\DatatransferPage\Components\DatatransferGroup.xaml" />
     <None Remove="Views\DatatransferPage\Components\DatatransferGroupItem.xaml" />
+    <None Remove="Views\Dialogs\ManualConnectionDialogContent.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryCommandBar.xaml" />
     <None Remove="Views\HistoryPage\Components\HistoryItem.xaml" />
-    <None Remove="Views\HistoryPage\Components\HistoryItemTag.xaml" />
+    <None Remove="Views\HistoryPage\Components\Tag.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +49,18 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\Dialogs\ManualConnectionDialogContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\BookmarksPage\Components\BookmarkGroupItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\BookmarksPage\Components\BookmarkGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\BookmarksPage\Components\Bookmark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\DatatransferPage\Components\DatatransferGroupItem.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -54,7 +70,7 @@
     <Page Update="Views\DatatransferPage\Components\Datatransfer.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="Views\HistoryPage\Components\HistoryItemTag.xaml">
+    <Page Update="Views\HistoryPage\Components\Tag.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="Views\BookmarksPage\Components\BookmarksCommandBar.xaml">

@@ -1,6 +1,8 @@
 ﻿using Cyberduck.Contracts.Services;
 using Cyberduck.Helpers;
+using Cyberduck.Services;
 using Cyberduck.ViewModels;
+using Cyberduck.Views.Dialogs;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
@@ -96,20 +98,46 @@ public sealed partial class ShellPage : Page
         }
     }
 
-    // Shows dialog for creating a new connection
     private async Task DisplayNewConnectionDialog()
     {
-        ContentDialog dialog = new ContentDialog();
+        ContentDialog newConnectionDialog = new ContentDialog();
 
-        dialog.XamlRoot = this.XamlRoot;
-        dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-        dialog.Title = "Neue Verbindung erstellen";
-        dialog.PrimaryButtonText = "Manuelle Verbindung erstellen";
-        dialog.CloseButtonText = "Abbrechen";
-        dialog.DefaultButton = ContentDialogButton.Primary;
-        dialog.Content = new NewConnectionDialogContent();
-        
-        await dialog.ShowAsync();
+        // Set the theme of the dialog based on the current theme
+        var themeSelectorService = App.GetService<IThemeSelectorService>();
+        newConnectionDialog.RequestedTheme = themeSelectorService.Theme;
+
+        newConnectionDialog.XamlRoot = this.XamlRoot;
+        newConnectionDialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+        newConnectionDialog.Title = "Neue Verbindung erstellen";
+        newConnectionDialog.PrimaryButtonText = "Manuelle Verbindung erstellen";
+        newConnectionDialog.CloseButtonText = "Abbrechen";
+        newConnectionDialog.DefaultButton = ContentDialogButton.Primary;
+        newConnectionDialog.Content = new NewConnectionDialogContent();
+
+        // Handle PrimaryButtonClick event
+        newConnectionDialog.PrimaryButtonClick += async (sender, args) =>
+        {
+            // Close the current dialog
+            newConnectionDialog.Hide();
+
+            // Show content dialog for manual connection
+            ContentDialog manualConnectionDialog = new ContentDialog();
+
+            // Set the theme of the dialog based on the current theme
+            manualConnectionDialog.RequestedTheme = themeSelectorService.Theme;
+
+            manualConnectionDialog.XamlRoot = this.XamlRoot;
+            manualConnectionDialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+            manualConnectionDialog.Title = "Manuelle Verbindung erstellen";
+            manualConnectionDialog.PrimaryButtonText = "Verbinden";
+            manualConnectionDialog.CloseButtonText = "Abbrechen";
+            manualConnectionDialog.DefaultButton = ContentDialogButton.Primary;
+            manualConnectionDialog.Content = new ManualConnectionDialogContent();
+
+            await manualConnectionDialog.ShowAsync();
+        };
+
+        await newConnectionDialog.ShowAsync();
     }
 
     // Handle text change and present suitable items

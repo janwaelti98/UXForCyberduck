@@ -15,5 +15,7 @@ public sealed partial class NewConnectionDialogContent : Page
     {
         ViewModel = App.GetService<NewConnectionDialogContentViewModel>();
         InitializeComponent();
+
+        DataContext = new NewConnectionDialogContentViewModel();
     }
 }

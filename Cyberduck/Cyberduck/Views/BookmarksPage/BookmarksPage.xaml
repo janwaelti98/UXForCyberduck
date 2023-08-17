@@ -3,14 +3,73 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:ABI.Microsoft.UI.Xaml.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="using:Cyberduck.Views.BookmarksPage.Components"
-
+    xmlns:local1="using:Cyberduck.Helpers"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <DataTemplate x:Key="BookmarkTemplate">
+            <local:Bookmark />
+        </DataTemplate>
+
+        <DataTemplate x:Key="BookmarkGroupTemplate">
+            <local:BookmarkGroup />
+        </DataTemplate>
+
+        <local1:BookmarkTemplateSelector x:Key="CombinedTemplateSelector"
+            BookmarkTemplate="{StaticResource BookmarkTemplate}"
+            BookmarkGroupTemplate="{StaticResource BookmarkGroupTemplate}" />
+    </Page.Resources>
+
     <Grid x:Name="ContentArea">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
         
+        <!-- Column Titles -->
+        <Grid Grid.Row="1"  Margin="48 12 48 12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="282" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="168" />
+                <ColumnDefinition Width="106" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="52 0 0 0" Text="Name" FontSize="14" Grid.Column="0" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Tag" FontSize="14" Grid.Column="1" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Änderungsdatum" FontSize="14" Grid.Column="2" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Typ" FontSize="14" Grid.Column="3" Foreground="{ThemeResource SubTitleColor}"/>
+        </Grid>
+
+        <!-- ListView for BookmarkObjects -->
+        <ListView Grid.Row="2" ItemsSource="{Binding BookmarkObjects}" Margin="48 0 36 0" Padding="0 0 12 0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Margin" Value="0 0 0 8" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <ContentPresenter
+                                    ContentTransitions="{TemplateBinding ContentTransitions}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplateSelector>
+                <StaticResource ResourceKey="CombinedTemplateSelector" />
+            </ListView.ItemTemplateSelector>
+        </ListView>
     </Grid>
 </Page>

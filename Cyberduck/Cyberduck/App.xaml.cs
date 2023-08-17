@@ -2,7 +2,6 @@
 using Cyberduck.Contracts.Services;
 using Cyberduck.Core.Contracts.Services;
 using Cyberduck.Core.Services;
-using Cyberduck.Helpers;
 using Cyberduck.Models;
 using Cyberduck.Services;
 using Cyberduck.ViewModels;
@@ -11,7 +10,6 @@ using Cyberduck.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
-using TestApp.Core.Services;
 
 namespace Cyberduck;
 
@@ -67,7 +65,6 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             // Core Services
-            services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
 
             // Views and ViewModels

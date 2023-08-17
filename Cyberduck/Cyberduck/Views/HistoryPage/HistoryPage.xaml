@@ -7,9 +7,9 @@
     xmlns:local="using:Cyberduck.Views.HistoryPage.Components"
     mc:Ignorable="d">
 
-
     <Grid x:Name="ContentArea">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -17,9 +17,20 @@
         <!-- Command Bar -->
         <local:CommandBar></local:CommandBar>
 
+        <!-- Column Titles -->
+        <Grid Grid.Row="1"  Margin="48 12 48 12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="282" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="52 0 0 0" Text="Name" FontSize="14" Grid.Column="0" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Tag" FontSize="14" Grid.Column="1" Foreground="{ThemeResource SubTitleColor}"/>
+            <TextBlock Text="Änderungsdatum" FontSize="14" Grid.Column="2" Foreground="{ThemeResource SubTitleColor}"/>
+        </Grid>
+
         <!-- ListView for History Items -->
-        <ListView Grid.Row="1" ItemsSource="{Binding HistoryItems}"  Margin="48 0 48 0">
-         
+        <ListView Grid.Row="2" ItemsSource="{Binding HistoryItems}"  Margin="48 0 36 0" Padding="0 0 12 0">
             <!-- Custom style  -->
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">

@@ -10,6 +10,7 @@
 
     <UserControl.Resources>
         <local1:DatatransferTypeToIconConverter x:Key="TypeToIconConverter" />
+        <local1:DatatransferStateToIconConverter x:Key="StateToIconConverter" />
         <local1:StateToVisibilityConverter x:Key="StateToVisibilityConverter" />
     </UserControl.Resources>
 
@@ -38,17 +39,17 @@
 
         <!-- Icon -->
         <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <FontIcon x:Name="icon" Glyph="{Binding Typ, Converter={StaticResource TypeToIconConverter}}" />
+            <FontIcon x:Name="icon" Glyph="{Binding Converter={StaticResource TypeToIconConverter}}" />
         </StackPanel>
 
         <!-- Connection Description -->
         <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" MinWidth="150" HorizontalAlignment="Left">
             <TextBlock Text="{Binding FileName}" FontSize="14" TextWrapping="NoWrap" Margin="0 0 0 4" />
-            <TextBlock Text="{Binding StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="Gray" />
+            <TextBlock Text="{Binding StateAsText}" FontSize="12" TextWrapping="NoWrap" Foreground="{ThemeResource SubTitleColor}" />
         </StackPanel>
 
         <!-- Modification Date -->
-        <StackPanel Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="24 0 24 0" HorizontalAlignment="Left">
+        <StackPanel Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="0 0 24 0" HorizontalAlignment="Left">
             <TextBlock Text="{Binding ModificationDate}" FontSize="14" TextWrapping="NoWrap" />
         </StackPanel>
 
@@ -58,11 +59,10 @@
         </StackPanel>
 
         <!-- State -->
-        <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" Margin="16 0 48 0" HorizontalAlignment="Left">
-            <!-- TODO fix show icon-->
-            <InfoBadge x:Name="infoBadge2" Style="{StaticResource SuccessIconInfoBadgeStyle}" />
+        <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" Margin="48 0 48 0" HorizontalAlignment="Left">
+            <InfoBadge Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
         </StackPanel>
-
+        
         <!-- Progress -->
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Margin="0 12 0 0" Visibility="{Binding State, Converter={StaticResource StateToVisibilityConverter}}">
             <ProgressBar Value="{Binding Progress}" />
