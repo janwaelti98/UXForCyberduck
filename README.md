@@ -2,8 +2,8 @@
 This WinUI3 project serves as a prototype showcasing a potential redesign of the "Cyberduck" software, incorporating the aesthetics of Windows 11. The project adopts the MVVM architecture to ensure a well-organized and structured approach.
 
 <div style="display: flex; flex-direction: row;">
-  <img width="450" alt="BookmarkPage_light" src="https://github.com/janwaelti98/UXForCyberduck/assets/79445035/f6193f96-8703-4e1d-8123-a7256d7bdaac.png">
-  <img width="450" alt="DatatransferPage_dark" src="https://github.com/janwaelti98/UXForCyberduck/assets/79445035/d373358d-e23e-42f5-90e7-be227ac00076.png">
+  <img width="400" alt="BookmarkPage_light" src="https://github.com/janwaelti98/UXForCyberduck/assets/79445035/f6193f96-8703-4e1d-8123-a7256d7bdaac.png">
+  <img width="400" alt="DatatransferPage_dark" src="https://github.com/janwaelti98/UXForCyberduck/assets/79445035/d373358d-e23e-42f5-90e7-be227ac00076.png">
 </div>
 
 ## Implemented UI
