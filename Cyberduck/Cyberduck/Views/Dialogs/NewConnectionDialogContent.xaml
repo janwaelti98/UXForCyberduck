@@ -11,6 +11,9 @@
         <ResourceDictionary>
             <SolidColorBrush x:Key="DataGridCellFocusVisualPrimaryBrush" Color="Transparent"/>
             <SolidColorBrush x:Key="DataGridCellFocusVisualSecondaryBrush" Color="Transparent"/>
+            <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundColor" Color="Transparent"/>
+            <SolidColorBrush x:Key="DataGridColumnHeaderHoveredBackgroundColor" Color="Transparent"/>
+            <SolidColorBrush x:Key="DataGridColumnHeaderPressedBackgroundColor" Color="Transparent"/>
         </ResourceDictionary>
     </Page.Resources>
 
@@ -32,10 +35,11 @@
                                    IsReadOnly="True"
                                    HorizontalAlignment="Stretch"
                                    AlternatingRowBackground="{ThemeResource AlternatingRowBackgroundTable}"
-                                   RowHeight="40">
+                                   RowHeight="40"
+                                   ColumnHeaderStyle="{ThemeResource HeaderTableBackground}" >
 
                     <controls:DataGrid.Columns>
-                        <controls:DataGridTemplateColumn Header="Name" MinWidth="165" MaxWidth="165">
+                        <controls:DataGridTemplateColumn Header="Name" MinWidth="165" MaxWidth="165" >
                             <controls:DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
