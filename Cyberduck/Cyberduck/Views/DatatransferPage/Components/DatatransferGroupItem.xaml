@@ -10,6 +10,7 @@
 
     <UserControl.Resources>
         <local:DatatransferStateToIconConverter x:Key="StateToIconConverter" />
+        <local:StateToVisibilityConverter x:Key="StateToVisibilityConverter" />
     </UserControl.Resources>
 
     <Grid ColumnSpacing="16" Height="Auto" HorizontalAlignment="Stretch">
@@ -41,11 +42,16 @@
         </StackPanel>
 
         <!-- State -->
-        <StackPanel Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 48 0">
+        <StackPanel Grid.RowSpan="2" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 48 12">
             <!-- TODO fix show icon-->
             <InfoBadge Style="{Binding State, Converter={StaticResource StateToIconConverter}}" />
         </StackPanel>
 
-        <Border Grid.Row="1" Grid.ColumnSpan="5" BorderThickness="0,1,0,0" BorderBrush="{ThemeResource BorderColor}" Margin="0,10,0,0"/>
+        <!-- Progress -->
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Margin="36 -6 48 0" Visibility="{Binding State, Converter={StaticResource StateToVisibilityConverter}}">
+            <ProgressBar Value="{Binding Progress}" Height="20"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="5" BorderThickness="0,1,0,0" BorderBrush="{ThemeResource BorderColor}" Margin="0, 16, 0,0"/>
     </Grid>
 </UserControl>

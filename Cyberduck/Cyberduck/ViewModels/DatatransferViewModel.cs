@@ -46,8 +46,9 @@ public partial class DatatransferViewModel : ObservableRecipient
                         FileName = "exampleFile2.txt",
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "12 KiB",
-                        State = DatatransferState.Success,
-                        StateAsText = "Herunterladen fertig"
+                        State = DatatransferState.InProgress,
+                        StateAsText = "Herunterladen...",
+                        Progress = 74
                     },
                     new Datatransfer
                     {
@@ -56,12 +57,13 @@ public partial class DatatransferViewModel : ObservableRecipient
                         ModificationDate = DateTime.Now.ToString("dd.MM.yyyy HH:mm"),
                         Size = "15 KiB",
                         State = DatatransferState.InProgress,
-                        StateAsText = "Herunterladen..."
+                        StateAsText = "Herunterladen...",
+                        Progress = 28
                     },
                 },
                 State = DatatransferState.InProgress,
                 StateAsText = "Herunterladen...",
-                Progress = 78
+                Progress = 67
             },
             new Datatransfer
             {
